@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+
+  {% if page.title and page.title != "Home" %}
+  <div class="discussion-link">
+    <a href="https://github.com/bettercallzaal/zao-papers/discussions/new?category=papers&title=Comment:%20{{ page.title | urlencode }}" target="_blank" rel="noopener noreferrer">
+      💬 Comment / Collaborate on GitHub
+    </a>
+  </div>
+  {% endif %}
+{% endblock %}

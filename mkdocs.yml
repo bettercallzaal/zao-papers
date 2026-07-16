@@ -1,0 +1,85 @@
+site_name: "The ZAO Papers"
+site_description: "Governance documents, ZIPs, and research papers from The ZAO ecosystem"
+site_author: "The ZAO"
+repo_url: https://github.com/bettercallzaal/zao-papers
+repo_name: zao-papers
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - content.action.edit
+    - navigation.instant
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - toc.follow
+
+plugins:
+  - search
+  - macros
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+docs_dir: docs
+site_dir: site
+
+nav:
+  - Home: index.md
+  - Papers:
+    - Sparkz (Creator-Coin Launcher): papers/sparkz.md
+  - Governance:
+    - ZIP Process: governance/process.md
+    - ZIP-1 (The ZAO Framework): governance/zip-0001.md
+  - Drafts:
+    - Overview: drafts/index.md
+
+extra_css:
+  - stylesheets/extra.css
