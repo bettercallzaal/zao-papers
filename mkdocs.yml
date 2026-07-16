@@ -34,7 +34,6 @@ theme:
 
 plugins:
   - search
-  - macros
 
 markdown_extensions:
   - abbr

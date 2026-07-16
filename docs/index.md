@@ -29,7 +29,7 @@ The ZAO is a Respect-weighted governance network coordinating music, culture, an
 
 ## How to Contribute
 
-1. **Comment on papers** - Use the "💬 Comment / Collaborate on GitHub" link at the bottom of any paper
+1. **Comment on papers** - Use the "Comment / Collaborate on GitHub" link at the bottom of any paper
 2. **Propose a ZIP** - New governance ideas go through formal review (see [ZIP Process](governance/process.md))
 3. **Submit research** - Have a paper on an ecosystem project? Open a PR with your draft
 

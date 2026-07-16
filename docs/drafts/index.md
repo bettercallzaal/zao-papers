@@ -9,7 +9,7 @@ Currently, all major ecosystem papers are in the main published catalog. As new 
 ## How to Contribute to Drafts
 
 1. **You have an idea** - Write it as a draft in the `papers/drafts/` directory on GitHub and open a PR
-2. **Comment on a draft** - Click the "💬 Comment / Collaborate" link to start a GitHub Discussion
+2. **Comment on a draft** - Click the "Comment / Collaborate" link to start a GitHub Discussion
 3. **Move to published** - Once a draft receives community feedback and is ready for ratification or publication, it moves to the main Papers section
 
 ## Guidelines for Draft Authors
