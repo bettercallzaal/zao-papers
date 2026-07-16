@@ -79,6 +79,7 @@ nav:
     - ZIP-1 (The ZAO Framework): governance/zip-0001.md
   - Drafts:
     - Overview: drafts/index.md
+  - Contribute: contribute.md
 
 extra_css:
   - stylesheets/extra.css
