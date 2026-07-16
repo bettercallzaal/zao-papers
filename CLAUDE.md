@@ -69,11 +69,30 @@ If drafting a ZIP and these numbers have aged, re-verify against the latest on-c
 4. **Address feedback** - clarity, accuracy, completeness.
 5. **Merge when approved** (not just auto-merge). The merge to main represents ratification or status change.
 
+## Community Member Profiles
+
+The `members/` directory holds grounded profiles of ZAO community contributors. Each profile celebrates real people and their roles in the ecosystem.
+
+**Style for member profiles:**
+- Grounded in verified sources. No invention.
+- Prose format, not bullet lists. One paragraph per section.
+- Mark unknown details as `[to confirm with Zaal]` rather than guessing.
+- Tag context quality: rich (full story known), moderate (some gaps), thin (minimal verified facts).
+- Include handles (Farcaster, X), role in The ZAO, and links to shipped work.
+- For people without public details, write short and honest. A thin profile is better than a fabricated thick one.
+
+**File structure:**
+- One `.md` file per community member: `members/<handle-or-slug>.md`
+- Use the template in `members/README.md`
+- Status: Draft until reviewed by @zaal; Accepted after revision
+
 ## Key Files
 
 - `README.md` - overview and process
-- `CLAUDE.md` - these guidelines
+- `CLAUDE.md` - these guidelines (including members section)
 - `PROCESS.md` - the ZIP specification (EIP-1 style)
+- `members/` - community member profiles (new)
+- `members/README.md` - profile template and submission process
 - `zips/zip-template.md` - boilerplate for new ZIPs
 - `zips/zip-NNNN-title.md` - individual ZIPs
 
