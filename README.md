@@ -22,6 +22,8 @@ See [PROCESS.md](PROCESS.md) for the complete ZIP lifecycle, status definitions,
 
 - **[PROCESS.md](PROCESS.md)** - The ZIP specification and workflow
 - **[zips/](zips/)** - All published ZIPs
+- **[papers/](papers/)** - Sparkz and ecosystem papers
+- **[papers/drafts/](papers/drafts/)** - Works in progress and research drafts
 - **[zips/zip-template.md](zips/zip-template.md)** - Template for new proposals
 - **[CLAUDE.md](CLAUDE.md)** - Guidelines for contributors using Claude Code
 
@@ -30,6 +32,15 @@ See [PROCESS.md](PROCESS.md) for the complete ZIP lifecycle, status definitions,
 | # | Title | Status | Description |
 |---|-------|--------|-------------|
 | **1** | [The ZAO Framework](zips/zip-0001-the-zao-framework.md) | Draft | Foundational governance architecture: Fractal, Respect, Brands, Agents |
+
+## Papers and Research
+
+Beyond governance ZIPs, **zao-papers** hosts canonical research papers about Sparkz and The ZAO ecosystem:
+
+- **[papers/](papers/)** - Sparkz and ecosystem documentation
+  - [Sparkz: Configurable Creator-Coin Launcher](papers/sparkz.md) - Research on energy-first token design and 0xSplits architecture
+  - [Ecosystem Catalog](papers/) - Complete guide to ZAO brands, ICM boxes, and systems
+  - [Drafts](papers/drafts/) - Works in progress and community feedback
 
 ## How to Propose a ZIP
 
