@@ -2,9 +2,12 @@
 
 This directory contains canonical papers, research, and documentation about Sparkz and The ZAO's brands, architecture, and systems.
 
-## Sparkz (Creator-Coin Launcher)
+## Papers
 
-- **[sparkz.md](sparkz.md)** - The Sparkz paper: configurable creator-coin launcher with AI advisor, grounded in 0xSplits and energy-first coordination. Status: Draft.
+- **[zabal-games.md](zabal-games.md)** - ZABAL Games: The ZAO's 3-Month Builder Incubator. Season 1: 28 June workshops, WaveWarZ Finals mechanic, 9 intake-ready builders. Status: Draft.
+- **[coc-concertz.md](coc-concertz.md)** - COC Concertz: The ZAO's Virtual Concert Series and Archive Protocol. 7 shows, Arweave UDL archive, WaveWarZ live integration. Status: Draft. (see PR #6)
+- **[wavewarz.md](wavewarz.md)** - WaveWarZ: The ZAO's On-Chain Music Battle Platform. 1,108+ battles, 524.15 SOL, 98.5% ecosystem payout. Status: Draft. (see PR #5)
+- **[sparkz.md](sparkz.md)** - Sparkz: Configurable Creator-Coin Launcher with AI advisor, energy-first coordination. Status: Draft.
 
 ## The ZAO Ecosystem: Brands and Systems
 
@@ -42,16 +45,16 @@ A portfolio of music, culture, and community projects operating under The ZAO um
 - **Positioning:** Front door + gravity well - brings external founders into The ZAO ecosystem
 - **Doc Reference:** Doc 743 (canonical v2)
 
-#### ZABAL Games (Build-a-Thon & Mentorship)
+#### ZABAL Games (Builder Incubator)
 
-- **What:** 3-month build-a-thon (Jun/Jul/Aug 2026) with workshop tracks and AI mentorship
-- **Structure:** Workshops (June) + Open build (July) + Finals (August)
-- **Builders:** 8 finalist builders guided by 8 ZAO mentors
-- **Mentors:** Industry partners (Tyler/Magnetiq, Jordan Oram, Adrian, Arthur/Neynar, kmac.eth, JC/FounderCheck, Shriyash/Apna, others)
-- **Build tracks:** ZAOstock, ZABAL, WaveWarZ, The ZAO context prompts
-- **Goal:** Winning build helps accelerate ZAOstock 2026
-- **Launched:** May 20, 2026
-- **Doc Reference:** Doc 681-682
+- **What:** 3-month builder incubator -- Workshops (June) + Open build (July) + Finals (August). Three tracks: artist, builder, creator.
+- **Season 1:** June 1 - August 31, 2026. Site: zabalgamez.com (Farcaster Mini App)
+- **June:** 28 workshop sessions complete; expert guests from Neynar, BizarreBeasts, Bankr, Eden Fractal, etc.
+- **July:** Open build phase; 9 intake-ready builder submissions in QV ballot
+- **August:** Finals -- builder projects compete in WaveWarZ battles; community investment determines winner
+- **Roster:** 32 people (organizers, mentors, leads, builders)
+- **Full paper:** [zabal-games.md](zabal-games.md)
+- **Doc Reference:** Doc 1258, Doc 1255
 
 #### Sparkz (Creator-Coin Launcher)
 
@@ -131,6 +134,6 @@ Articles and research written by ZAO members on topics of ecosystem interest.
 
 ---
 
-**Last updated:** 2026-07-16  
+**Last updated:** 2026-07-17  
 **Maintainer:** @zaal  
 **License:** CC-BY-4.0
