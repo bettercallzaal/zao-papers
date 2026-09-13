@@ -17,7 +17,7 @@ source-docs:
 
 ## Abstract
 
-WaveWarZ is a live music battle platform where songs compete head-to-head in public voting rounds on Solana. Every trade triggers an instant artist payout (**1.005% of trade volume** - measured at exact lamports, see the fee note). Since May 2025 the platform has processed **1,643 battles** across **3,209 track mints**, generating **714.54 SOL of buy volume (928.52 SOL counting sells)**, and has run four benefit-battle rounds for charity (2025-12-12, 2026-02-13, 2026-06-20, 2026-09-11). The platform's economics invert the standard streaming model: where Spotify routes ~12% of revenue to artists, WaveWarZ routes 98.5% of all fees back into the ecosystem (artists + stakers). This paper documents the mechanics, economics, on-chain data, and the open questions that define WaveWarZ. **On-chain figures are as of 2026-09-06 08:22 UTC and each is reproducible from a public RPC.**
+WaveWarZ is a live music battle platform where songs compete head-to-head in public voting rounds on Solana. Every trade triggers an instant artist payout (**1.005% of trade volume** - measured at exact lamports, see the fee note). Since May 2025 the platform has opened **1,643 battle accounts, 1,604 of them with tracks minted and 1,550 settled**, across **3,208 distinct track mints**, generating **714.54 SOL of buy volume (928.52 SOL counting sells)**, and has run four benefit-battle rounds for charity (2025-12-12, 2026-02-13, 2026-06-20, 2026-09-11). The platform's economics invert the standard streaming model: where Spotify routes ~12% of revenue to artists, WaveWarZ routes 98.5% of all fees back into the ecosystem (artists + stakers). This paper documents the mechanics, economics, on-chain data, and the open questions that define WaveWarZ. **On-chain figures are as of 2026-09-06 08:22 UTC and each is reproducible from a public RPC.**
 
 ---
 
@@ -106,18 +106,29 @@ cutoff 2026-09-06 08:22 UTC; every figure below is reproducible from a public RP
 
 | Metric | Value | Source |
 |--------|-------|--------|
-| Total battles | **1,643** | chain scan, every battle account |
+| Battle accounts opened | **1,643** | chain scan, every battle account |
+| Of those, with tracks minted | **1,604** | chain, 39 accounts were never initialised |
 | Settled battles | **1,550** | chain, `winner_decided` |
 | Total volume, buys only | **714.54 SOL** | chain, `buyShares` instruction data |
 | Total volume, buys + sells | **928.52 SOL** | chain, both legs |
-| Distinct track mints | **3,209** | chain, distinct mint addresses across all battles |
+| Distinct track mints | **3,208** | chain, excluding the default/unset pubkey |
 | Total distributed to winners | **450.13 SOL** | chain, settlement at byte 249 |
 | First battle | **2025-05-26** | chain, earliest `start_time` |
 | Charity raised | *see note* | not reproducible from chain here |
 
-**Why 3,209 and not 3,286.** Two mints per battle over 1,643 battles would be 3,286 if every mint
-were unique. It is **3,209 distinct addresses**, so 77 mints appear in more than one battle - the
-same track re-entered. The distinct count is the honest one for "how many tracks have battled".
+**Why 3,208 and not 3,286, and the answer is more interesting than arithmetic.** Two mints per
+battle over 1,643 accounts would be 3,286. The gap is **not** tracks re-entering. Exactly one
+address repeats in the whole population - `11111111111111111111111111111111`, the default unset
+pubkey, 78 times across **39 battle accounts that were never initialised**: `is_initialized` false,
+pools zero, supplies zero, none settled.
+
+Remove those and **3,208 real mints across 1,604 battles with tracks - and no real mint appears
+twice.** Every track that has battled has battled exactly once. That is a fact about the platform
+worth stating, and it is the opposite of what a raw distinct-count implies.
+
+*(An earlier draft of this paragraph said "77 mints appear in more than one battle - the same track
+re-entered". That was invented: a cause fitted to a subtraction, never checked against the set.
+There is no re-entry. Caught in review.)*
 
 **Why volume now has two rows.** The July figure of 524.15 SOL was a single number with no
 stated definition. Buys-only and buys-plus-sells differ by 214 SOL, so a paper that prints one
@@ -252,7 +263,7 @@ the five need input this lane does not have and would have to invent.**
 
 These questions are flagged for community input rather than answered definitively:
 
-- **Registered artist coverage:** the July draft said 34 of 921 unique songs carry verified artist handles, with the remaining 887 routing artist payouts to the protocol. **Both numbers need re-deriving before publication** - the song population is now 3,209 track mints, so the ratio in that sentence is certainly stale and this lane has not re-measured handle coverage. What is the right artist onboarding mechanic to increase handle registration?
+- **Registered artist coverage:** the July draft said 34 of 921 unique songs carry verified artist handles, with the remaining 887 routing artist payouts to the protocol. **Both numbers need re-deriving before publication** - the song population is now 3,208 distinct track mints, so the ratio in that sentence is certainly stale and this lane has not re-measured handle coverage. What is the right artist onboarding mechanic to increase handle registration?
 - **WaveWarZ-Base:** A Solana-to-Base bridge is in design (doc from the board). What is the right cross-chain architecture? How do battle outcomes and payouts work cross-chain?
 - **Artist payout to which wallet?** The current 1% fires to Audius-linked wallets. What happens when an artist has a Solana address but no Audius registration?
 - **Battle queue management:** Who decides which songs enter which battles? What prevents gaming of the pairing system?
@@ -262,7 +273,7 @@ These questions are flagged for community input rather than answered definitivel
 
 ## Summary
 
-WaveWarZ is the first on-chain music battle platform with verified instant artist payouts. It has processed **1,643 battles** and **714.54 SOL of buy volume** since May 2025, and has run four charity rounds. Its artist-first economics (98.5% ecosystem payout against Spotify's ~12% to rights holders) come from the July 2026 Dune verification and **have not been re-derived in this refresh** - unlike the battle, volume and fee figures above, which were. The open-source wwtracker analytics layer makes every claim independently auditable.
+WaveWarZ is the first on-chain music battle platform with verified instant artist payouts. It has opened **1,643 battle accounts, 1,550 of them settled**, and processed **714.54 SOL of buy volume** since May 2025, and has run four charity rounds. Its artist-first economics (98.5% ecosystem payout against Spotify's ~12% to rights holders) come from the July 2026 Dune verification and **have not been re-derived in this refresh** - unlike the battle, volume and fee figures above, which were. The open-source wwtracker analytics layer makes every claim independently auditable.
 
 What WaveWarZ proves is not just that music battles can be fun. It proves that a community with enough conviction, a clear economic mechanic, and a public transparency layer can build a functioning alternative to the streaming economy - one where the money actually reaches the artists.
 
