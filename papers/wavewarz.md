@@ -110,10 +110,14 @@ cutoff 2026-09-06 08:22 UTC; every figure below is reproducible from a public RP
 | Settled battles | **1,550** | chain, `winner_decided` |
 | Total volume, buys only | **714.54 SOL** | chain, `buyShares` instruction data |
 | Total volume, buys + sells | **928.52 SOL** | chain, both legs |
-| Distinct track mints | **3,209** | chain, two mints per battle |
+| Distinct track mints | **3,209** | chain, distinct mint addresses across all battles |
 | Total distributed to winners | **450.13 SOL** | chain, settlement at byte 249 |
 | First battle | **2025-05-26** | chain, earliest `start_time` |
 | Charity raised | *see note* | not reproducible from chain here |
+
+**Why 3,209 and not 3,286.** Two mints per battle over 1,643 battles would be 3,286 if every mint
+were unique. It is **3,209 distinct addresses**, so 77 mints appear in more than one battle - the
+same track re-entered. The distinct count is the honest one for "how many tracks have battled".
 
 **Why volume now has two rows.** The July figure of 524.15 SOL was a single number with no
 stated definition. Buys-only and buys-plus-sells differ by 214 SOL, so a paper that prints one
@@ -198,16 +202,30 @@ The charity mechanic: a benefit battle designates a cause as the "artist" recipi
 
 WaveWarZ was the Finals stage for ZABAL Gamez, The ZAO's builder incubator. Builder projects
 competed head-to-head in WaveWarZ battles, with community votes (buys) determining which project
-advanced. **Season 1 closed on 2026-08-30, with ghostmintops taking the builder track.**
+advanced. **Season 1 is final. All three tracks were decided** (`zabalgamez/data/season-1-results.json`,
+status `final`):
+
+| Track | Winner | Project |
+|---|---|---|
+| Artist | **@n3m** | |
+| Builder | **@ghostmintops** | Proof Drop, a build receipt generator, plus the ZABAL Recording Scout |
+| Creator | **@uniquebeing404** | ColorZAO, the ZAO colour paint tool, plus a video |
+
+**The close date needs one decision before publication: the frozen results file gives
+`"closes": "2026-08-31"` while its own schema note in the same file says "window closes
+2026-08-30".** Both dates are also in circulation elsewhere in that repo. This paper follows the
+machine-readable field, **2026-08-31**, because that is the one a reader can check. Zaal should
+settle which is right rather than have a public paper pick a side of an internal disagreement.
 
 That was the first time WaveWarZ's battle mechanic had been applied to non-music content -
 treating a builder's project the way it treats a song: a public, financially-staked community
 vote.
 
 *(This section was written in the future tense - "In August 2026, WaveWarZ becomes the Finals
-stage" - for a season that has since run and finished. A public paper describing a completed
-event as upcoming dates itself on the day it is read. The season 1 result is relayed from the
-grill lane and should be confirmed by Zaal before publication; the tense fix stands regardless.)*
+stage" - for a season that has since run and finished. A public paper describing a completed event
+as upcoming dates itself on the day it is read. The results are now cited from
+`zabalgamez/data/season-1-results.json` rather than from a relay, so they can be checked rather
+than taken on anyone's word.)*
 
 ---
 
@@ -244,7 +262,7 @@ These questions are flagged for community input rather than answered definitivel
 
 ## Summary
 
-WaveWarZ is the first on-chain music battle platform with verified instant artist payouts. It has processed **1,643 battles** and **714.54 SOL of buy volume** since May 2025, and has run four charity rounds. Its artist-first economics (98.5% ecosystem payout vs. Spotify's ~12% to rights holders) are verified on-chain via Dune dashboards. The open-source wwtracker analytics layer makes every claim independently auditable.
+WaveWarZ is the first on-chain music battle platform with verified instant artist payouts. It has processed **1,643 battles** and **714.54 SOL of buy volume** since May 2025, and has run four charity rounds. Its artist-first economics (98.5% ecosystem payout against Spotify's ~12% to rights holders) come from the July 2026 Dune verification and **have not been re-derived in this refresh** - unlike the battle, volume and fee figures above, which were. The open-source wwtracker analytics layer makes every claim independently auditable.
 
 What WaveWarZ proves is not just that music battles can be fun. It proves that a community with enough conviction, a clear economic mechanic, and a public transparency layer can build a functioning alternative to the streaming economy - one where the money actually reaches the artists.
 
