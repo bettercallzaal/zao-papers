@@ -99,10 +99,14 @@ The X Space format: host calls out a battle in real-time, community buys/sells d
 
 ## On-Chain Data (verified from chain, 2026-09-06 cutoff)
 
-All figures from doc 1252 (battle feed audit) and doc 1077 (volume deep dive), verified against on-chain data via wwtracker + Dune.
+**Refreshed 2026-09-13 from a complete on-chain scan.** Chain cutoff 2026-09-06 08:22 UTC; every
+figure below is reproducible from a public RPC.
 
-**Refreshed 2026-09-13 from a complete on-chain scan**, not from the July documents. Chain
-cutoff 2026-09-06 08:22 UTC; every figure below is reproducible from a public RPC.
+*(Until this refresh this table was sourced from doc 1252, the battle feed audit, and doc 1077, the
+volume deep dive, cross-checked via wwtracker and Dune. That sentence stood immediately above the
+refresh note, so the same table claimed two different provenances at once - kept here as history
+rather than deleted, because the July documents are still where the figures NOT re-derived come
+from, and those are marked individually.)*
 
 | Metric | Value | Source |
 |--------|-------|--------|
