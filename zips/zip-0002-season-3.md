@@ -95,8 +95,18 @@ Sub-projects list). Two ways to activate that month:
 
 You only re-sign the manifesto text itself once per version, not every month: "your next
 activation asks you to sign it once" after a new version, and everyone in the active pool is
-always on current terms (brainstorm #19, #15). What counts as "attending something" for
-auto-activation is not decided - see Open Item 1.
+always on current terms (brainstorm #19, #15).
+
+**What counts as "attending something" for auto-activation.** Brainstorm #20 deferred this by
+name to settle a bigger structural question first (fractal-as-governance vs. fractal-as-incubated
+project); that structural question is answered in section 6 below. Zaal ruled on the deferred
+question itself in the grill on 2026-09-15: **a fractal, hosting a call or making an intro, a
+festival, article or workshop count as attending. Signature alone does not** (decisions/
+grill-2026-09-15-morning.md, "Agent stack" / Season 3 line). This overlaps heavily with what
+already earns Respect today - intro and article both feed `event_respect`, hosting feeds
+`hosting_respect`, festival feeds `bonus_respect` (brainstorm, Measured context) - with a fractal
+session itself and a workshop (the ZABAL Gamez branch, brainstorm #31) named as activating events
+too.
 
 **Mechanism.** OREC reads vote weight live, per voter, at the moment each address casts or
 re-casts its vote - not a single snapshot taken for every voter at proposal-creation time
@@ -162,7 +172,7 @@ Location, Community) is pruned but not restructured by Season 3: WaveWarZ stays 
 merges into ZAO Fractal (onboarding/education side); ZAO Cards merges into ZAO FESTIVALS; Student
 $LOANZ goes dormant; MIDI-ZAO-NKZ is inactive; Location and Community stop being project branches
 and become member-profile attributes instead (brainstorm #26, #27, #28). The "ZAO Fractals"
-branch itself is left as it is and deferred to Season 4 (brainstorm #29) - see Open Item 5 for the
+branch itself is left as it is and deferred to Season 4 (brainstorm #29) - see Open Item 4 for the
 naming tension this leaves unresolved.
 
 ### 7. Emergency council
@@ -266,7 +276,7 @@ month's vote weight - they remain full members with every point intact (brainsto
 - **Naming collision.** Tree 226 already has a project branch literally named "ZAO Fractals,"
   which conflicts with brainstorm #21's decision that the fractal is the governance of The ZAO,
   not a project inside it. Season 3 leaves this branch exactly as it is and defers resolving the
-  conflict to Season 4 (brainstorm #29) - see Open Item 5.
+  conflict to Season 4 (brainstorm #29) - see Open Item 4.
 - **Scope creep risk.** Brainstorm #31 is an explicit, verbatim refusal to add ZAOstock, FISHBOWLZ
   or ZAO OS as projects under this ZIP. Any future PR that expands Season 3's scope to include
   them needs a new ZIP, not an edit to this one.
@@ -280,29 +290,22 @@ This ZIP is released under CC-BY-4.0.
 ## Open items
 
 Numbered per PROCESS.md's "mark uncertainty" rule. None of these are invented answers - the
-brainstorm log is silent on each, and Zaal deferred at least two of them by name.
+brainstorm log is silent on each, and Zaal deferred at least one of them by name.
 
-1. **What counts as "attending something" for auto-activation.** Zaal deferred this by name to
-   settle a bigger structural question first (fractal-as-governance vs. fractal-as-incubated
-   project), and it was never picked back up (brainstorm #20). Options on the table from prior
-   status notes: anything already recorded against an identity (a fractal, intro, camera, article,
-   hosting, festival, listing Respect event); fractals only; or any ZAO event including COC
-   Concertz and ZABAL Gamez workshops (handoffs/status/zaofractal.md, NEEDS-ZAAL #3). Blocks the
-   activation wrapper's exact eligibility check.
-2. **The manifesto text does not exist yet.** Zaal chose the method - he rambles, the lane
+1. **The manifesto text does not exist yet.** Zaal chose the method - he rambles, the lane
    assembles strictly from his words, he reads it aloud and edits (brainstorm #35) - but the
    capture session has not happened (brainstorm #6). This gates the 1 November launch outright
    (handoffs/status/zaofractal.md, NEEDS-ZAAL #4).
-3. **Custom module budget and reviewer.** The activation wrapper needs a named external Solidity
+2. **Custom module budget and reviewer.** The activation wrapper needs a named external Solidity
    reviewer, and none has been assigned as of this draft (handoffs/season3.md; season3-hats-
    protocol-research-2026-09-11.md, Open Question 3).
-4. **Tree 226's automation gap.** Every hat in the tree except the Wave WarZ DAO branch currently
+3. **Tree 226's automation gap.** Every hat in the tree except the Wave WarZ DAO branch currently
    uses a non-contract sentinel address as its eligibility/toggle module, so nothing today can
    trigger automated revocation on those hats (season3-hats-protocol-research-2026-09-11.md, Q7).
    Whether Season 3 replaces this tree's automation branch by branch, or starts a clean new branch
    for Manifesto/Provisional/Active hats and leaves the 17 existing project branches exactly as
    they are, is not decided (same source, Open Question 1).
-5. **The "ZAO Fractals" branch name.** Deferred to Season 4 by Zaal's own words (brainstorm #29);
+4. **The "ZAO Fractals" branch name.** Deferred to Season 4 by Zaal's own words (brainstorm #29);
    this ZIP does not resolve the naming conflict with brainstorm #21 described under Process
    Risks above.
 
@@ -319,3 +322,5 @@ brainstorm log is silent on each, and Zaal deferred at least two of them by name
 - `handoffs/season3.md` - the season3 lane's brief, including Zaal's post-launch build order.
 - `handoffs/status/zaofractal.md` and `handoffs/zaofractal.md` - the fractal-bot lane's prior
   state and open NEEDS-ZAAL questions this ZIP inherits as Open Items.
+- `decisions/grill-2026-09-15-morning.md` - Zaal's ruling on what counts as "attending
+  something" for auto-activation, closing brainstorm #20.
