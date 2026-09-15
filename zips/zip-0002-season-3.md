@@ -170,17 +170,19 @@ Gamez.** ZAOstock, FISHBOWLZ and ZAO OS are unaffected by this ZIP.
 The full measured tree-226 project-branch list is 17 branches: Community, Location, ZAO 101, ZAO
 Fractals, Wave WarZ DAO, ZAO FESTIVALS, ZTalent Newsletter, ZAO Cards, Student $LOANZ, ZAO
 Calendar, COC ConcertZ, MIDI-ZAO-NKZ, Let's Talk about Web 3, and Future Project 1-4
-(season3-hats-protocol-research-2026-09-11.md, Q7). Brainstorm #25 asked for this list to be
-pruned and for missing branches to be added; Season 3 prunes but does not add, because #31's
-later, more specific ruling closes the list to exactly one new branch, ZABAL Gamez. Of the 17:
-WaveWarZ stays live; ZAO 101 merges into ZAO Fractal (onboarding/education side); ZAO Cards merges
-into ZAO FESTIVALS; Student $LOANZ goes dormant (brainstorm #26); MIDI-ZAO-NKZ is inactive
-(brainstorm #27); Location and Community are delisted as project branches and become
-member-profile attributes instead (brainstorm #28). ZAO Calendar, COC Concertz, ZTalent Newsletter
-and Let's Talk about Web 3 stay live, unchanged (brainstorm #27). The "ZAO Fractals" branch itself
-is left exactly as it is and deferred to Season 4 (brainstorm #29) - see Open Item 4 for the
-naming tension this leaves unresolved. Future Project 1-4 are not mentioned anywhere in the
-brainstorm log and are untouched by this ZIP.
+(season3-hats-protocol-research-2026-09-11.md, Q7) - `COC ConcertZ` is the measured onchain hat
+name; the brand spelling used elsewhere in this ZIP is COC Concertz, same branch. Brainstorm #25
+asked for this list to be pruned and for missing branches to be added; Season 3 prunes but does
+not add any others, because #31's later, more specific ruling closes the list to exactly one new
+branch, ZABAL Gamez. Of the 17: WaveWarZ stays live; ZAO 101 merges into ZAO Fractal
+(onboarding/education side); ZAO Cards merges into ZAO FESTIVALS; Student $LOANZ goes dormant
+(brainstorm #26); MIDI-ZAO-NKZ is inactive (brainstorm #27); Location and Community are delisted
+as project branches and become member-profile attributes instead (brainstorm #28). ZAO Calendar,
+COC Concertz and Let's Talk about Web 3 stay live, unchanged (brainstorm #27); ZTalent Newsletter
+also stays live, unchanged (brainstorm #28). The "ZAO Fractals" branch itself is left exactly as
+it is and deferred to Season 4 (brainstorm #29) - see Open Item 4 for the naming tension this
+leaves unresolved. Future Project 1-4 are not mentioned anywhere in the brainstorm log and are
+untouched by this ZIP.
 
 ### 7. Emergency council
 
@@ -236,7 +238,7 @@ offchain Snapshot strategy - found each of them either solving a problem OREC do
 **Why the fractal, not a bigger redesign, first.** Zaal named the fractal as The ZAO's governance,
 not one project among many (brainstorm #21). Season 3 deliberately does not touch ZAOstock,
 FISHBOWLZ or ZAO OS, and defers the "ZAO Fractals" project-branch naming question to Season 4
-(brainstorm #29, #31; see Open Item 4) - narrowing scope so the seven weeks between this draft and
+(brainstorm #29, #31; see Open Item 4) - narrowing scope so the seven weeks from 2026-09-12 to
 launch (brainstorm #32) are spent on membership and activation, not on redesigning the org's
 project federation at the same time.
 
@@ -278,8 +280,10 @@ point intact (brainstorm #1, #19).
 - **Revocation must route through governance, not a person.** The design pattern is to make OREC
   (or a hat OREC wears) the sole eligibility/arbitrator party capable of calling
   `setHatWearerStatus` on the Manifesto Hat (brainstorm #8; season3-hats-protocol-
-  research-2026-09-11.md, Q4). This is not yet wired in tree 226, which today has no automation
-  wired anywhere (season3-hats-protocol-research-2026-09-11.md, Q7) - wiring it is part of this
+  research-2026-09-11.md, Q4). This is not yet wired in tree 226: the top four levels have no
+  automation wired at all (season3-hats-protocol-research-2026-09-11.md, Q7), though a deeper
+  walk of levels 5-6 found real eligibility modules already live on some leaf hats (same source,
+  Q7 2026-09-13 correction) - wiring the Manifesto Hat's own revocation path is part of this
   ZIP's build, not a future amendment.
 
 ### Process Risks
@@ -305,7 +309,7 @@ invented answers: the brainstorm log either defers each by name or leaves it una
 
 1. **The manifesto text does not exist yet.** Zaal chose the method - he rambles, the lane
    assembles strictly from his words, he reads it aloud and edits (brainstorm #35) - and brainstorm
-   #6 itself says it "needs writing", so this is a named gap, not silence. The capture session has
+   #6 itself says "Needs writing.", so this is a named gap, not silence. The capture session has
    not happened. This gates the 1 November launch outright (handoffs/status/zaofractal.md,
    NEEDS-ZAAL #4).
 2. **Custom module budget and reviewer.** The activation wrapper needs a named external Solidity
