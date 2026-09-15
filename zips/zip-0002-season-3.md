@@ -39,9 +39,9 @@ brainstorm log names as later work (brainstorm, Sub-projects list).
 
 ### 1. Three layers, not one membership
 
-"Making someone 'in The ZAO' is not one state. Joining is separate from Respect, and separate
-from being active this month. Inactive people stay in and keep every point" (brainstorm #1).
-Season 3 implements this as three layers:
+Being "in The ZAO" is not one state. Zaal's own answer to what makes someone a member: "Layers.
+Joining is separate from Respect, and separate from being active this month. Inactive people stay
+in and keep every point" (brainstorm #1). Season 3 implements this as three layers:
 
 1. **Provisional member** - has minted the manifesto with an email-only identity (Privy). Has
    achievements only; earns no Respect and cannot vote (brainstorm #13, #14).
@@ -50,9 +50,10 @@ Season 3 implements this as three layers:
    #4, #9). Full members keep every Respect point they have ever earned, whether or not they are
    active this month (brainstorm #1).
 3. **This month's active pool** - full members who have signed the current month's activation, or
-   who auto-activated by attending something this month (brainstorm #18, #19). Only this layer's
-   Respect counts as OREC vote weight for the month (brainstorm, Measured context correction,
-   2026-09-11).
+   who auto-activated by attending something this month (brainstorm #18, #19). This is the pool
+   whose vote passes an OREC proposal (brainstorm #8, #23); mechanically, OREC reads Respect
+   balance live per voter at cast time rather than a single proposal-creation snapshot (brainstorm,
+   Measured context correction, 2026-09-11).
 
 Onchain, membership is a **Manifesto Hat on Hats Protocol tree 226 (Optimism, chain 10)**
 (brainstorm #17). This confirms the direction already set in ZAO OS research docs 942/962, which
@@ -73,7 +74,7 @@ u can get different achievements and titles and roles for participating in diffe
   wearer's own `renounceHat()`, or the governance-controlled eligibility module burning it on
   revocation (season3-hats-protocol-research-2026-09-11.md, Q5).
 - **Gas.** The ZAO sponsors gas; login is via Privy, including email-only (brainstorm #12).
-  Concretely this is Hats Protocol's `claimHatFor()`: any relayer the ZAO operates can pay gas on
+  Concretely this is Hats Protocol's `claimHatFor()`: any relayer The ZAO operates can pay gas on
   an eligible wearer's behalf once the hat is set claimable-for (season3-hats-protocol-
   research-2026-09-11.md, Q2).
 - **Identity to become full.** At least one linked identity, proven by OAuth (Discord, LinkedIn,
@@ -105,8 +106,7 @@ festival, article or workshop count as attending. Signature alone does not** (de
 grill-2026-09-15-morning.md, "Agent stack" / Season 3 line). This overlaps heavily with what
 already earns Respect today - intro and article both feed `event_respect`, hosting feeds
 `hosting_respect`, festival feeds `bonus_respect` (brainstorm, Measured context) - with a fractal
-session itself and a workshop (the ZABAL Gamez branch, brainstorm #31) named as activating events
-too.
+session itself and a workshop also named as activating events.
 
 **Mechanism.** OREC reads vote weight live, per voter, at the moment each address casts or
 re-casts its vote - not a single snapshot taken for every voter at proposal-creation time
@@ -119,7 +119,8 @@ through one governance proposal** - it never touches the real Respect ledger, it
 this address's activation current right now" when OREC reads it (Zaal's build-order list,
 handoffs/season3.md; season3-protocol-survey-2026-09-11.md, Layer 4 Part B/recommended stack).
 This is the "small custom wrapper OREC reads" item on Zaal's own post-launch build list and needs
-review by a Solidity reviewer who did not write it before it ships (handoffs/season3.md).
+review by a Solidity reviewer who did not write it before it ships (handoffs/season3.md). What
+backs the wrapper's own activation record is not yet decided - see Open Item 5.
 
 No off-the-shelf Hats Protocol module does self-service monthly re-activation with no admin
 action; the closest reference implementation (Hats Elections Eligibility) still requires results
@@ -166,18 +167,24 @@ under this ZIP: "No season 3 is just the fractla season none of these sjould be 
 zabal gamez" (brainstorm #31, verbatim). **The only new project branch in Season 3 is ZABAL
 Gamez.** ZAOstock, FISHBOWLZ and ZAO OS are unaffected by this ZIP.
 
-The existing tree-226 project-branch list (WaveWarZ, ZAO 101, ZAO Cards, Student $LOANZ, ZAO
-Calendar, COC Concertz, MIDI-ZAO-NKZ, Let's Talk about Web 3, ZAO FESTIVALS, ZTalent Newsletter,
-Location, Community) is pruned but not restructured by Season 3: WaveWarZ stays live; ZAO 101
-merges into ZAO Fractal (onboarding/education side); ZAO Cards merges into ZAO FESTIVALS; Student
-$LOANZ goes dormant; MIDI-ZAO-NKZ is inactive; Location and Community stop being project branches
-and become member-profile attributes instead (brainstorm #26, #27, #28). The "ZAO Fractals"
-branch itself is left as it is and deferred to Season 4 (brainstorm #29) - see Open Item 4 for the
-naming tension this leaves unresolved.
+The full measured tree-226 project-branch list is 17 branches: Community, Location, ZAO 101, ZAO
+Fractals, Wave WarZ DAO, ZAO FESTIVALS, ZTalent Newsletter, ZAO Cards, Student $LOANZ, ZAO
+Calendar, COC ConcertZ, MIDI-ZAO-NKZ, Let's Talk about Web 3, and Future Project 1-4
+(season3-hats-protocol-research-2026-09-11.md, Q7). Brainstorm #25 asked for this list to be
+pruned and for missing branches to be added; Season 3 prunes but does not add, because #31's
+later, more specific ruling closes the list to exactly one new branch, ZABAL Gamez. Of the 17:
+WaveWarZ stays live; ZAO 101 merges into ZAO Fractal (onboarding/education side); ZAO Cards merges
+into ZAO FESTIVALS; Student $LOANZ goes dormant (brainstorm #26); MIDI-ZAO-NKZ is inactive
+(brainstorm #27); Location and Community are delisted as project branches and become
+member-profile attributes instead (brainstorm #28). ZAO Calendar, COC Concertz, ZTalent Newsletter
+and Let's Talk about Web 3 stay live, unchanged (brainstorm #27). The "ZAO Fractals" branch itself
+is left exactly as it is and deferred to Season 4 (brainstorm #29) - see Open Item 4 for the
+naming tension this leaves unresolved. Future Project 1-4 are not mentioned anywhere in the
+brainstorm log and are untouched by this ZIP.
 
 ### 7. Emergency council
 
-Kept, not newly created (brainstorm #29). Its powers are narrow and reversible: pause a contract
+Kept (brainstorm #29: "Emergency council: keep"). Its powers are narrow and reversible: pause a contract
 or bot, pull content published in The ZAO's name, freeze a compromised wallet. Every action is
 posted publicly and reversible by normal vote. It never mints Respect, spends treasury, or
 revokes membership (brainstorm #30). OREC's own 72-hour vote plus 72-hour veto window means
@@ -229,8 +236,9 @@ offchain Snapshot strategy - found each of them either solving a problem OREC do
 **Why the fractal, not a bigger redesign, first.** Zaal named the fractal as The ZAO's governance,
 not one project among many (brainstorm #21). Season 3 deliberately does not touch ZAOstock,
 FISHBOWLZ or ZAO OS, and defers the "ZAO Fractals" project-branch naming question to Season 4
-(brainstorm #29, #31) - narrowing scope so a four-week build window (see Open Item 4) is spent on
-membership and activation, not on redesigning the org's project federation at the same time.
+(brainstorm #29, #31; see Open Item 4) - narrowing scope so the seven weeks between this draft and
+launch (brainstorm #32) are spent on membership and activation, not on redesigning the org's
+project federation at the same time.
 
 ## Backwards Compatibility
 
@@ -238,9 +246,12 @@ Existing Respect holders are not migrated or reset. They mint the manifesto like
 their Respect and history stay exactly as they are (brainstorm #5). The OG Respect (ERC-20) and
 ZOR Respect (ERC-1155) ledgers are untouched by this ZIP; the activation wrapper is additive and
 never writes to either (season3-protocol-survey-2026-09-11.md, Layer 4 Part B). No existing
-project branch is deleted; three are merged or marked dormant per brainstorm #26-28, and one new
-branch (ZABAL Gamez) is added. Members who do not activate in a given month lose nothing but that
-month's vote weight - they remain full members with every point intact (brainstorm #1, #19).
+project branch's hat is burned or deleted onchain: four branches merge or go dormant/inactive
+(ZAO 101, ZAO Cards, Student $LOANZ, MIDI-ZAO-NKZ - brainstorm #26, #27), two (Location,
+Community) are delisted as project branches and converted to member-profile attributes
+(brainstorm #28), and one new branch (ZABAL Gamez) is added. Members who do not activate in a
+given month lose nothing but that month's vote weight - they remain full members with every
+point intact (brainstorm #1, #19).
 
 ## Security and Governance Considerations
 
@@ -289,25 +300,37 @@ This ZIP is released under CC-BY-4.0.
 
 ## Open items
 
-Numbered per PROCESS.md's "mark uncertainty" rule. None of these are invented answers - the
-brainstorm log is silent on each, and Zaal deferred at least one of them by name.
+Numbered per zip-template.md's "Notes for Authors" - "mark uncertainty" rule. None of these are
+invented answers: the brainstorm log either defers each by name or leaves it unanswered.
 
 1. **The manifesto text does not exist yet.** Zaal chose the method - he rambles, the lane
-   assembles strictly from his words, he reads it aloud and edits (brainstorm #35) - but the
-   capture session has not happened (brainstorm #6). This gates the 1 November launch outright
-   (handoffs/status/zaofractal.md, NEEDS-ZAAL #4).
+   assembles strictly from his words, he reads it aloud and edits (brainstorm #35) - and brainstorm
+   #6 itself says it "needs writing", so this is a named gap, not silence. The capture session has
+   not happened. This gates the 1 November launch outright (handoffs/status/zaofractal.md,
+   NEEDS-ZAAL #4).
 2. **Custom module budget and reviewer.** The activation wrapper needs a named external Solidity
    reviewer, and none has been assigned as of this draft (handoffs/season3.md; season3-hats-
    protocol-research-2026-09-11.md, Open Question 3).
-3. **Tree 226's automation gap.** Every hat in the tree except the Wave WarZ DAO branch currently
-   uses a non-contract sentinel address as its eligibility/toggle module, so nothing today can
-   trigger automated revocation on those hats (season3-hats-protocol-research-2026-09-11.md, Q7).
-   Whether Season 3 replaces this tree's automation branch by branch, or starts a clean new branch
-   for Manifesto/Provisional/Active hats and leaves the 17 existing project branches exactly as
-   they are, is not decided (same source, Open Question 1).
+3. **Automation gap in tree 226's top levels.** Every hat in the top four levels of the tree,
+   except the Wave WarZ DAO branch, uses a non-contract sentinel address as its eligibility/toggle
+   module, so nothing today can trigger automated revocation on those hats
+   (season3-hats-protocol-research-2026-09-11.md, Q7). A deeper walk of levels 5-6 found real
+   eligibility modules already live on many leaf hats (same source, Q7 2026-09-13 correction;
+   branches 7-17 of that walk were not reached). Whether Season 3 replaces the top-level
+   automation branch by branch, or starts a clean new branch for Manifesto/Provisional/Active hats
+   and leaves the 17 existing project branches exactly as they are, is not decided (same source,
+   Open Question 1).
 4. **The "ZAO Fractals" branch name.** Deferred to Season 4 by Zaal's own words (brainstorm #29);
    this ZIP does not resolve the naming conflict with brainstorm #21 described under Process
    Risks above.
+5. **The activation credential's backing store.** Brainstorm's own recommended stack lists
+   "Unlock-style expiring key or wrapper for activation" - an "or," not a decision. A real Unlock
+   Protocol expiring key needs less custom code and is already audited, but adds a protocol
+   dependency and a per-key `extend` gas cost; a hand-rolled activation-registry contract needs
+   more custom code but no external dependency. Both feed the same OREC `IRespect` wrapper either
+   way, so this does not change section 3's wrapper-into-OREC mechanism, only what the wrapper
+   reads from (season3-protocol-survey-2026-09-11.md, Open Question 2 and Recommended stack, row
+   3b).
 
 ## Sources and References
 
