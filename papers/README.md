@@ -4,6 +4,7 @@ This directory contains canonical papers, research, and documentation about Spar
 
 ## Papers
 
+- **[coc-concertz.md](coc-concertz.md)** - COC Concertz: The ZAO's Virtual Concert Series and Archive Protocol. 7 shows, Mar 2025-Jul 2026, Arweave fan archive with UDL licenses, WaveWarZ live integration. Status: Draft.
 - **[wavewarz.md](wavewarz.md)** - WaveWarZ: The ZAO's On-Chain Music Battle Platform. 1,108+ battles, 524.15 SOL volume, 98.5% ecosystem payout rate, verified on-chain. Status: Draft.
 - **[sparkz.md](sparkz.md)** - Sparkz: Configurable Creator-Coin Launcher with AI advisor, grounded in 0xSplits and energy-first coordination. Status: Draft.
 
@@ -63,12 +64,14 @@ A portfolio of music, culture, and community projects operating under The ZAO um
 - **Legal review:** Greg Autonomous (web3 counsel) - memocoin vs utility framing [open]
 - **Doc Reference:** Doc 1098 (master brief), Doc 1088 (token), Doc 1108 (legal), Doc 1132 (pilot)
 
-#### COC Concertz (Artist Concert Series & Label)
+#### COC Concertz (Virtual Concert Series)
 
-- **What:** Emerging artist concert series and record label
-- **Status:** Graduated to own repo (code deleted from ZAOOS, exists independently)
-- **Deployment:** Own codebase, own database, own domain
-- **Relationship:** ZAOOS retains research/institutional memory; no code duplication
+- **What:** Live virtual concert series co-produced with Community of Communities (CoC); Spatial.io "Dope Stilo Music Club" venue; Arweave fan archive with UDL licenses
+- **Shows:** 7 (Mar 29 2025 through Jul 18 2026); monthly cadence from Mar 2026
+- **Simulcast:** Twitch @bettercallzaal, free to all
+- **COC #7 pilot:** Wallet gate removed; live WaveWarZ BattleVote widget integrated
+- **Full paper:** [coc-concertz.md](coc-concertz.md)
+- **Doc Reference:** Doc 1256, Doc 1210
 
 #### ZAO Festivals (Live Events)
 
