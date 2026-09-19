@@ -20,12 +20,19 @@ See [PROCESS.md](PROCESS.md) for the complete ZIP lifecycle, status definitions,
 
 ## Quick Links
 
+- **[members/](members/)** - Community member profiles (new)
 - **[PROCESS.md](PROCESS.md)** - The ZIP specification and workflow
 - **[zips/](zips/)** - All published ZIPs
 - **[papers/](papers/)** - Sparkz and ecosystem papers
 - **[papers/drafts/](papers/drafts/)** - Works in progress and research drafts
 - **[zips/zip-template.md](zips/zip-template.md)** - Template for new proposals
 - **[CLAUDE.md](CLAUDE.md)** - Guidelines for contributors using Claude Code
+
+## Community Profiles
+
+The **[members/](members/)** section celebrates the people building The ZAO. These are grounded profiles of community contributors - their roles, their shipped work, and their impact on the ecosystem.
+
+See [members/README.md](members/README.md) for the growing series.
 
 ## Key ZIPs
 
