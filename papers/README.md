@@ -5,9 +5,9 @@ This directory contains canonical papers, research, and documentation about Spar
 ## Papers
 
 - **[zabal-games.md](zabal-games.md)** - ZABAL Gamez: The ZAO's 3-Month Builder Incubator. Season 1: 28 June workshops, WaveWarZ Finals mechanic, 9 intake-ready builders. Status: Draft.
-- **[coc-concertz.md](coc-concertz.md)** - COC Concertz: The ZAO's Virtual Concert Series and Archive Protocol. 7 shows, Arweave UDL archive, WaveWarZ live integration. Status: Draft. (see PR #6)
-- **[wavewarz.md](wavewarz.md)** - WaveWarZ: The ZAO's On-Chain Music Battle Platform. 1,108+ battles, 524.15 SOL, 98.5% ecosystem payout. Status: Draft. (see PR #5)
-- **[sparkz.md](sparkz.md)** - Sparkz: Configurable Creator-Coin Launcher with AI advisor, energy-first coordination. Status: Draft.
+- **[coc-concertz.md](coc-concertz.md)** - COC Concertz: The ZAO's Virtual Concert Series and Archive Protocol. 7 shows, Mar 2025-Jul 2026, Arweave fan archive with UDL licenses, WaveWarZ live integration. Status: Draft.
+- **[wavewarz.md](wavewarz.md)** - WaveWarZ: The ZAO's On-Chain Music Battle Platform. 1,108+ battles, 524.15 SOL volume, 98.5% ecosystem payout rate, verified on-chain. Status: Draft.
+- **[sparkz.md](sparkz.md)** - Sparkz: Configurable Creator-Coin Launcher with AI advisor, grounded in 0xSplits and energy-first coordination. Status: Draft.
 
 ## The ZAO Ecosystem: Brands and Systems
 
@@ -33,17 +33,17 @@ A portfolio of music, culture, and community projects operating under The ZAO um
 - **Context:** https://useicm.com/api/objects/icm_ohb0F_XOYDz9Tw_w4yX3PA/llm.txt
 - **Human Directory:** https://thezao.xyz/list
 
-#### WaveWarZ (Music Trading Platform)
+#### WaveWarZ (Music Battle Platform)
 
-- **What:** Artist-to-fan music trading game with real revenue splits
-- **Live since:** [to confirm: launch date]
-- **Volume:** ~458 SOL (~$39K at 2026-05-25), 979 battles
-- **Team:** Hurric4n3IKE (founder/dev), Candytoybox/Samantha (design/marketing), Zaal (ecosystem)
-- **Stack:** Solana mainnet + Base Sepolia testnet, Next.js/React, Supabase
-- **Partners:** 7 major integrations (Coinflow, Juke, Magnetiq, Empire Builder, Neynar, RAM SongChain, Privy)
-- **Daily:** 11 events per week (AMAs, Quick Battle Trading, special tournaments)
-- **Positioning:** Front door + gravity well - brings external founders into The ZAO ecosystem
-- **Doc Reference:** Doc 743 (canonical v2)
+- **What:** On-chain music battle platform -- songs compete in bonding-curve prediction markets, 1% of every trade goes to the artist instantly
+- **Live since:** May 2025
+- **Volume:** 524.15 SOL (~$39,453), 1,108+ battles, 921 unique songs (verified July 2026)
+- **Artist payouts:** 9.07 SOL total (1.79% of volume); 34 Audius-verified artist handles
+- **Platform take:** 3.16% (verified on-chain, doc 1219)
+- **Charity raised:** $1,497 across 2 benefit-battle rounds
+- **Analytics:** wwtracker (open-source, 12+ modules) at wwtracker.vercel.app
+- **Full paper:** [wavewarz.md](wavewarz.md)
+- **Doc Reference:** Doc 1077, 1079, 1214, 1219, 1237, 1252
 
 #### ZABAL Gamez (Builder Incubator)
 
@@ -65,12 +65,14 @@ A portfolio of music, culture, and community projects operating under The ZAO um
 - **Legal review:** Greg Autonomous (web3 counsel) - memocoin vs utility framing [open]
 - **Doc Reference:** Doc 1098 (master brief), Doc 1088 (token), Doc 1108 (legal), Doc 1132 (pilot)
 
-#### COC Concertz (Artist Concert Series & Label)
+#### COC Concertz (Virtual Concert Series)
 
-- **What:** Emerging artist concert series and record label
-- **Status:** Graduated to own repo (code deleted from ZAOOS, exists independently)
-- **Deployment:** Own codebase, own database, own domain
-- **Relationship:** ZAOOS retains research/institutional memory; no code duplication
+- **What:** Live virtual concert series co-produced with Community of Communities (CoC); Spatial.io "Dope Stilo Music Club" venue; Arweave fan archive with UDL licenses
+- **Shows:** 7 (Mar 29 2025 through Jul 18 2026); monthly cadence from Mar 2026
+- **Simulcast:** Twitch @bettercallzaal, free to all
+- **COC #7 pilot:** Wallet gate removed; live WaveWarZ BattleVote widget integrated
+- **Full paper:** [coc-concertz.md](coc-concertz.md)
+- **Doc Reference:** Doc 1256, Doc 1210
 
 #### ZAO Festivals (Live Events)
 
