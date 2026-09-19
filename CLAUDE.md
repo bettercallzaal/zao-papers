@@ -93,8 +93,13 @@ The `members/` directory holds grounded profiles of ZAO community contributors. 
 - `PROCESS.md` - the ZIP specification (EIP-1 style)
 - `members/` - community member profiles (new)
 - `members/README.md` - profile template and submission process
+- `zips/` - governance ZIPs (ZIP-1, ZIP-2, etc.)
 - `zips/zip-template.md` - boilerplate for new ZIPs
 - `zips/zip-NNNN-title.md` - individual ZIPs
+- `papers/` - Sparkz and ecosystem research papers
+- `papers/README.md` - catalog of brands, ICM boxes, and systems
+- `papers/sparkz.md` - Sparkz paper (draft)
+- `papers/drafts/` - works in progress and community feedback
 
 ## Linking and References
 
