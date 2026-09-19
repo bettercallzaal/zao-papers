@@ -4,6 +4,7 @@ This directory contains canonical papers, research, and documentation about Spar
 
 ## Papers
 
+- **[zabal-games.md](zabal-games.md)** - ZABAL Gamez: The ZAO's 3-Month Builder Incubator. Season 1: 28 June workshops, WaveWarZ Finals mechanic, 9 intake-ready builders. Status: Draft.
 - **[coc-concertz.md](coc-concertz.md)** - COC Concertz: The ZAO's Virtual Concert Series and Archive Protocol. 7 shows, Mar 2025-Jul 2026, Arweave fan archive with UDL licenses, WaveWarZ live integration. Status: Draft.
 - **[wavewarz.md](wavewarz.md)** - WaveWarZ: The ZAO's On-Chain Music Battle Platform. 1,108+ battles, 524.15 SOL volume, 98.5% ecosystem payout rate, verified on-chain. Status: Draft.
 - **[sparkz.md](sparkz.md)** - Sparkz: Configurable Creator-Coin Launcher with AI advisor, grounded in 0xSplits and energy-first coordination. Status: Draft.
@@ -44,16 +45,16 @@ A portfolio of music, culture, and community projects operating under The ZAO um
 - **Full paper:** [wavewarz.md](wavewarz.md)
 - **Doc Reference:** Doc 1077, 1079, 1214, 1219, 1237, 1252
 
-#### ZABAL Games (Build-a-Thon & Mentorship)
+#### ZABAL Gamez (Builder Incubator)
 
-- **What:** 3-month build-a-thon (Jun/Jul/Aug 2026) with workshop tracks and AI mentorship
-- **Structure:** Workshops (June) + Open build (July) + Finals (August)
-- **Builders:** 8 finalist builders guided by 8 ZAO mentors
-- **Mentors:** Industry partners (Tyler/Magnetiq, Jordan Oram, Adrian, Arthur/Neynar, kmac.eth, JC/FounderCheck, Shriyash/Apna, others)
-- **Build tracks:** ZAOstock, ZABAL, WaveWarZ, The ZAO context prompts
-- **Goal:** Winning build helps accelerate ZAOstock 2026
-- **Launched:** May 20, 2026
-- **Doc Reference:** Doc 681-682
+- **What:** 3-month builder incubator -- Workshops (June) + Open build (July) + Finals (August). Three tracks: artist, builder, creator.
+- **Season 1:** June 1 - August 31, 2026. Site: zabalgamez.com (Farcaster Mini App)
+- **June:** 28 workshop sessions complete; expert guests from Neynar, BizarreBeasts, Bankr, Eden Fractal, etc.
+- **July:** Open build phase; 9 intake-ready builder submissions in QV ballot
+- **August:** Finals -- builder projects compete in WaveWarZ battles; community investment determines winner
+- **Roster:** 32 people (organizers, mentors, leads, builders)
+- **Full paper:** [zabal-games.md](zabal-games.md)
+- **Doc Reference:** Doc 1258, Doc 1255
 
 #### Sparkz (Creator-Coin Launcher)
 
@@ -93,7 +94,7 @@ The ZAO ecosystem maintains AI-readable context boxes on useicm.com for programm
 | Name | ICM ID | Link | Purpose |
 |------|--------|------|---------|
 | **The ZAO** | icm_ohb0F_XOYDz9Tw_w4yX3PA | [LLM context](https://useicm.com/api/objects/icm_ohb0F_XOYDz9Tw_w4yX3PA/llm.txt) | Core governance, Fractal, Respect, ORDAO |
-| **ZABAL Games** | icm_PiCDHNNZ3WZpNoF59OA8Dw | [LLM context](https://useicm.com/api/objects/icm_PiCDHNNZ3WZpNoF59OA8Dw/llm.txt) | Build-a-thon mentorship, builder context |
+| **ZABAL Gamez** | icm_PiCDHNNZ3WZpNoF59OA8Dw | [LLM context](https://useicm.com/api/objects/icm_PiCDHNNZ3WZpNoF59OA8Dw/llm.txt) | Build-a-thon mentorship, builder context |
 | **ZAO Assistant** | icm_-hsPHePpqX01RovoB_SEqA | [LLM context](https://useicm.com/api/objects/icm_-hsPHePpqX01RovoB_SEqA/llm.txt) | ZAO operator layer, linking to other boxes |
 
 **How to use:** Fetch an ICM context box via `curl -s https://useicm.com/api/objects/<id>/llm.txt` to load grounded AI context. All ZAO ecosystem agents (ZOE, Bonfire, others) can query these boxes for current knowledge.
@@ -119,7 +120,7 @@ Articles and research written by ZAO members on topics of ecosystem interest.
 ## Style Guide
 
 - No emojis or decorative Unicode
-- Brand names always exact: The ZAO, WaveWarZ, ZABAL Games, Sparkz, COC Concertz, ORDAO, Respect
+- Brand names always exact: The ZAO, WaveWarZ, ZABAL Gamez, Sparkz, COC Concertz, ORDAO, Respect
 - Mark uncertain claims with [to confirm]
 - Ground all technical claims in Doc NNN, GitHub links, or on-chain data
 - See CLAUDE.md for full contributor guidelines
