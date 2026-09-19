@@ -2,9 +2,10 @@
 
 This directory contains canonical papers, research, and documentation about Sparkz and The ZAO's brands, architecture, and systems.
 
-## Sparkz (Creator-Coin Launcher)
+## Papers
 
-- **[sparkz.md](sparkz.md)** - The Sparkz paper: configurable creator-coin launcher with AI advisor, grounded in 0xSplits and energy-first coordination. Status: Draft.
+- **[wavewarz.md](wavewarz.md)** - WaveWarZ: The ZAO's On-Chain Music Battle Platform. 1,108+ battles, 524.15 SOL volume, 98.5% ecosystem payout rate, verified on-chain. Status: Draft.
+- **[sparkz.md](sparkz.md)** - Sparkz: Configurable Creator-Coin Launcher with AI advisor, grounded in 0xSplits and energy-first coordination. Status: Draft.
 
 ## The ZAO Ecosystem: Brands and Systems
 
@@ -30,17 +31,17 @@ A portfolio of music, culture, and community projects operating under The ZAO um
 - **Context:** https://useicm.com/api/objects/icm_ohb0F_XOYDz9Tw_w4yX3PA/llm.txt
 - **Human Directory:** https://thezao.xyz/list
 
-#### WaveWarZ (Music Trading Platform)
+#### WaveWarZ (Music Battle Platform)
 
-- **What:** Artist-to-fan music trading game with real revenue splits
-- **Live since:** [to confirm: launch date]
-- **Volume:** ~458 SOL (~$39K at 2026-05-25), 979 battles
-- **Team:** Hurric4n3IKE (founder/dev), Candytoybox/Samantha (design/marketing), Zaal (ecosystem)
-- **Stack:** Solana mainnet + Base Sepolia testnet, Next.js/React, Supabase
-- **Partners:** 7 major integrations (Coinflow, Juke, Magnetiq, Empire Builder, Neynar, RAM SongChain, Privy)
-- **Daily:** 11 events per week (AMAs, Quick Battle Trading, special tournaments)
-- **Positioning:** Front door + gravity well - brings external founders into The ZAO ecosystem
-- **Doc Reference:** Doc 743 (canonical v2)
+- **What:** On-chain music battle platform -- songs compete in bonding-curve prediction markets, 1% of every trade goes to the artist instantly
+- **Live since:** May 2025
+- **Volume:** 524.15 SOL (~$39,453), 1,108+ battles, 921 unique songs (verified July 2026)
+- **Artist payouts:** 9.07 SOL total (1.79% of volume); 34 Audius-verified artist handles
+- **Platform take:** 3.16% (verified on-chain, doc 1219)
+- **Charity raised:** $1,497 across 2 benefit-battle rounds
+- **Analytics:** wwtracker (open-source, 12+ modules) at wwtracker.vercel.app
+- **Full paper:** [wavewarz.md](wavewarz.md)
+- **Doc Reference:** Doc 1077, 1079, 1214, 1219, 1237, 1252
 
 #### ZABAL Games (Build-a-Thon & Mentorship)
 
@@ -131,6 +132,6 @@ Articles and research written by ZAO members on topics of ecosystem interest.
 
 ---
 
-**Last updated:** 2026-07-16  
+**Last updated:** 2026-07-17  
 **Maintainer:** @zaal  
 **License:** CC-BY-4.0
