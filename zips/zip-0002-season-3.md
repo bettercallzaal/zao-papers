@@ -4,14 +4,14 @@ title: Season 3 - The Fractal Season
 author: Zaal
 status: Draft
 created: 2026-09-15
-last-updated: 2026-09-15
+last-updated: 2026-09-26
 ---
 
 # ZIP-2: Season 3 - The Fractal Season
 
 ## Abstract
 
-Season 3 starts 1 November 2026 and redefines who is "in The ZAO." It replaces the five
+Season 3 starts 1 December 2026 (moved from 1 November on 2026-09-26) and redefines who is "in The ZAO." It replaces the five
 conflicting code-level meanings of "member" (brainstorm, Measured context 2026-09-11) with three
 layers - provisional, full, and this month's active voting pool - joined by a soulbound,
 gasless, one-signature manifesto mint, kept by monthly self-service activation with no burn, and
@@ -85,16 +85,30 @@ u can get different achievements and titles and roles for participating in diffe
 - **Where.** fractal.thezao.com - manifesto, login, public points and achievements (brainstorm
   #16). No DNS record exists for that subdomain yet as of 2026-09-11 (brainstorm #16, Measured).
 
-### 3. Monthly activation
+### 3. Activation: a rolling 90-day window
 
-Activation is the monthly signature, and it never burns anything (Sub-project 3, brainstorm
-Sub-projects list). Two ways to activate that month:
+**Amended 2026-09-26.** This section originally specified a calendar-month activation, from
+brainstorm #18 and #32. Zaal ruled for a **rolling 90-day window** instead
+(`decisions/grill-2026-09-26-zao-papers-midday.md`, ruling 2), on the evidence in ZAOOS research doc
+`governance/2558-dao-periodic-reactivation-precedent`. A member is active if they signed or attended
+within the last 90 days, evaluated at the moment they vote.
 
-- Sign the current month's activation directly, or
-- Attend something that month, which auto-activates you: "Would be cool if it auto opts you in
+Three reasons, in the order they decided it. The ZAO already defines an active member as one with a
+qualifying action in the past 90 days (ZAOOS `community/1441-zao-lapsed-member-reengagement-jul2026`),
+and shipping a second, stricter definition would recreate the very problem this ZIP exists to end. No
+organisation surveyed in doc 2558 uses a calendar cliff: Optimism's Token House measures quorum
+against OP whose voting power was used in the trailing six months, Colony decays continuously, and
+fractally's own design treats 12 weeks of non-attendance, 84 days, as the point where participation
+stops counting. And a trailing window is simpler to review than month arithmetic, which matters when
+the reviewer is external and the clock is short.
+
+Activation never burns anything (Sub-project 3, brainstorm Sub-projects list). Two ways to activate:
+
+- Sign the current activation directly, or
+- Attend something, which auto-activates you for the next 90 days: "Would be cool if it auto opts you in
   when u attend something" (brainstorm #18).
 
-You only re-sign the manifesto text itself once per version, not every month: "your next
+You only re-sign the manifesto text itself once per version, not every window: "your next
 activation asks you to sign it once" after a new version, and everyone in the active pool is
 always on current terms (brainstorm #19, #15).
 
@@ -122,7 +136,18 @@ This is the "small custom wrapper OREC reads" item on Zaal's own post-launch bui
 review by a Solidity reviewer who did not write it before it ships (handoffs/season3.md). What
 backs the wrapper's own activation record is not yet decided - see Open Item 5.
 
-No off-the-shelf Hats Protocol module does self-service monthly re-activation with no admin
+**Why this cannot be a Hats module, measured.** Hats has two ways to stop a hat counting and they
+are not equivalent. The eligibility path is per-member, and in `Hats.sol` `_processHatWearerStatus`
+calls `_burnHat(_wearer, _hatId)` when a wearer becomes ineligible - a real ERC-1155 burn. The toggle
+path is non-destructive: `_processHatStatus` flips the hat's active bit, `balanceOf()` computes
+`_isActive(hat) && _isEligible(wearer, hat)` on every read and returns 0, but the underlying balance
+slot is never written and returns the instant the toggle flips back. `IHatsToggle.getHatStatus`
+takes no wearer argument, so a stock toggle module structurally cannot be per-member. Per-member
+always burns; non-destructive is always branch-wide. Since brainstorm #1 forbids burning anything,
+no Hats module can carry activation, and the `IRespect` wrapper is the narrowest thing that can
+(ZAOOS `governance/2558-dao-periodic-reactivation-precedent`, section 2b).
+
+No off-the-shelf Hats Protocol module does self-service periodic re-activation with no admin
 action; the closest reference implementation (Hats Elections Eligibility) still requires results
 submitted by a separate "ballot box" hat wearer, not a self-declared signal from each member
 (season3-hats-protocol-research-2026-09-11.md, Q3). The wrapper above is the build gap that
@@ -160,6 +185,17 @@ decisions, money (brainstorm #22). A project becomes a ZAO project by proposal a
 member proposes, and it is official once an OREC proposal passes in the active pool. Existing
 projects are admitted in one batch proposal at the start of Season 3, nothing grandfathered
 silently (brainstorm #23).
+
+**SCOPE AMENDED 2026-09-26.** The paragraph below states Season 3 as fractal-only, from brainstorm
+#31. Zaal has since reframed it: Season 3 is The ZAO's move out of beta into full production, "an
+update of everything," and Respect itself splits by project - ZAO Festivals Respect, ZAO Fractal
+Respect for governance, WaveWarZ Respect later, each split to its own org and dogfooded on our own
+projects first (`decisions/grill-2026-09-26-zao-papers-afternoon.md`, rulings 2 and 3). OG Respect
+becomes the one-time achievements ledger (intro, socials linked, voting on a proposal, ZAO 101,
+video), minted through OREC as custom transactions, with past OG amounts repaired first from Discord
+and session logs before reconciling against the chain (rulings 1 and 5). Whether that belongs in this
+ZIP as an amendment or in a new ZIP-1-scale document is open. The original scope text follows,
+unedited, because the decision to supersede it is recorded rather than hidden.
 
 **Season 3's own scope is the fractal only** - membership, manifesto, activation, and the public
 points display. Zaal, verbatim, on adding ZAOstock, FISHBOWLZ, ZABAL Gamez or ZAO OS as projects
@@ -204,7 +240,11 @@ display it via the existing `orclient`/`gui` stack) rather than a new offchain-o
 
 ### 9. Timeline
 
-Season 3 starts **1 November 2026** - the first activation lands that day (brainstorm #32). If
+Season 3 starts **1 December 2026** - the first activation lands that day. **Moved from 1 November
+on 2026-09-26** (`decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 4), because Season 3's
+scope changed the same day: Zaal, verbatim, "its really ZIP one tbh so this is a whole new world and
+season 3 will but an update of everythign we will be going out of beta and into full production
+release essentially". The 1 November date was already public, so the move needs announcing. If
 the activation wrapper contract is not reviewed by someone outside this estate in time, **the
 season moves.** Zaal has ruled this specific tradeoff already: The ZAO does not ship unreviewed
 governance code, and does not split activation into an off-chain interim step to hit the date
@@ -234,6 +274,35 @@ three alternatives - an ERC20Votes-style self-delegation token, an EAS-attestati
 offchain Snapshot strategy - found each of them either solving a problem OREC does not have
 (a proposal-creation-time snapshot) or breaking OREC's `msg.sender`-keyed `_vote()` call outright
 (same source, Layer 4 Part B).
+
+**Why gating the vote on a recurring signal is a normal thing to do, and where the precedent runs
+out.** Outside crypto this design is ordinary. A dairy co-operative's bylaws gate voting on an annual
+activity level while stating that losing voting-member status "will not affect rights and obligations
+of the member in any allocated patronage accounts or other classes of equity securities"
+(CentralStar Cooperative, Inc. Bylaws, Art. II Sec. 6). The UAW constitution makes the same split
+inside one clause, giving retired members "all of the privileges of membership except the right to
+vote in elections" (Art. 16 Sec. 19). Robert's Rules Sec. 64 computes quorum from those who attend
+where a society's member roll "is not reliable as a list of the bona fide members". Season 3's
+"activate to vote, never lose a point" is that pattern.
+
+It is a choice rather than a default, and the ZIP should say so: the NCUA model bylaws for federal
+credit unions deliberately do the opposite, preserving the vote for members not in good standing.
+Inside crypto the closest live precedent is harsher than Season 3 - Optimism's Citizens' House
+removes the citizen badge itself from anyone who casts zero votes in a Retro Funding round - while
+every decay system surveyed (Colony's 3.5-month reputation half-life, Gardens conviction, Coordinape
+epochs, fractally's own moving average of weekly Level) decays the weight or the scoring input and
+never the earned record. Full survey and sources: ZAOOS `governance/2558-dao-periodic-reactivation-precedent`.
+
+**The strongest argument against this design, and the answer.** Published work finds that
+registration and verification requirements "sharply reduce the fraction of token holders that can
+participate in governance votes, concentrating the voting power in few holders" (arXiv:2604.25959).
+With 156 holders, an OG distribution Gini of 0.73 and 6 to 30 people at a typical session, that risk
+is real and this ZIP runs it deliberately. The answer is that the alternative is not a broad
+electorate but a nominal one: industry-wide DAO turnout runs roughly 5 to 20 percent, and a roster of
+122 who mostly do not vote does not dilute a determined minority, it conceals one. Activation makes
+the real electorate visible and countable, which is the precondition for a quorum rule that means
+anything. Consequently quorum must be defined as a share of the current active pool, never as a fixed
+number of members.
 
 **Why the fractal, not a bigger redesign, first.** Zaal named the fractal as The ZAO's governance,
 not one project among many (brainstorm #21). Season 3 deliberately does not touch ZAOstock,
@@ -310,7 +379,7 @@ invented answers: the brainstorm log either defers each by name or leaves it una
 1. **The manifesto text does not exist yet.** Zaal chose the method - he rambles, the lane
    assembles strictly from his words, he reads it aloud and edits (brainstorm #35) - and brainstorm
    #6 itself says "Needs writing.", so this is a named gap, not silence. The capture session has
-   not happened. This gates the 1 November launch outright (handoffs/status/zaofractal.md,
+   not happened. This gates the 1 December launch outright (handoffs/status/zaofractal.md,
    NEEDS-ZAAL #4).
 2. **Custom module budget and reviewer.** The activation wrapper needs a named external Solidity
    reviewer, and none has been assigned as of this draft (handoffs/season3.md; season3-hats-
@@ -327,7 +396,21 @@ invented answers: the brainstorm log either defers each by name or leaves it una
 4. **The "ZAO Fractals" branch name.** Deferred to Season 4 by Zaal's own words (brainstorm #29);
    this ZIP does not resolve the naming conflict with brainstorm #21 described under Process
    Risks above.
-5. **The activation credential's backing store.** Brainstorm's own recommended stack lists
+5. **WHICH LEDGER IS VOTE WEIGHT. Added 2026-09-26, and it outranks everything else here.**
+   MEASURED on Optimism 2026-09-26: `OREC.respectContract()` returns `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`,
+   the OG Respect ERC-20, whose newest transfer is 2025-12-20. The weekly fractal mints ZOR
+   (64 holders, 373 transfers, newest mint 2026-09-24 at onchain `periodNumber` 114). So every
+   Respect earned in the weekly game since December 2025 carries **no vote weight at all**, and
+   governance today is decided by a frozen ledger of 122 addresses with an OG distribution Gini of
+   0.73. An activation wrapper installed over OG would gate that frozen ledger rather than the
+   community, and would exclude every member whose entire history is ZOR. This ZIP assumed the
+   question was settled and it is not. Zaal must rule on what OREC should read - frozen OG, live
+   ZOR, or a wrapper summing both - before the wrapper is specified, because it changes what the
+   wrapper wraps. `setRespectContract` is in the deployed bytecode, so one passed proposal can
+   repoint OREC with no redeploy. Source: ZAOOS `governance/2562-zao-fractal-state-and-build-plan`,
+   Key Decision 1.
+
+6. **The activation credential's backing store.** Brainstorm's own recommended stack lists
    "Unlock-style expiring key or wrapper for activation" - an "or," not a decision. A real Unlock
    Protocol expiring key needs less custom code and is already audited, but adds a protocol
    dependency and a per-key `extend` gas cost; a hand-rolled activation-registry contract needs
