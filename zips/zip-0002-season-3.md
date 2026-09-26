@@ -11,7 +11,7 @@ last-updated: 2026-09-26
 
 ## Abstract
 
-Season 3 starts 1 November 2026 and redefines who is "in The ZAO." It replaces the five
+Season 3 starts 1 December 2026 (moved from 1 November on 2026-09-26) and redefines who is "in The ZAO." It replaces the five
 conflicting code-level meanings of "member" (brainstorm, Measured context 2026-09-11) with three
 layers - provisional, full, and this month's active voting pool - joined by a soulbound,
 gasless, one-signature manifesto mint, kept by monthly self-service activation with no burn, and
@@ -186,6 +186,17 @@ member proposes, and it is official once an OREC proposal passes in the active p
 projects are admitted in one batch proposal at the start of Season 3, nothing grandfathered
 silently (brainstorm #23).
 
+**SCOPE AMENDED 2026-09-26.** The paragraph below states Season 3 as fractal-only, from brainstorm
+#31. Zaal has since reframed it: Season 3 is The ZAO's move out of beta into full production, "an
+update of everything," and Respect itself splits by project - ZAO Festivals Respect, ZAO Fractal
+Respect for governance, WaveWarZ Respect later, each split to its own org and dogfooded on our own
+projects first (`decisions/grill-2026-09-26-zao-papers-afternoon.md`, rulings 2 and 3). OG Respect
+becomes the one-time achievements ledger (intro, socials linked, voting on a proposal, ZAO 101,
+video), minted through OREC as custom transactions, with past OG amounts repaired first from Discord
+and session logs before reconciling against the chain (rulings 1 and 5). Whether that belongs in this
+ZIP as an amendment or in a new ZIP-1-scale document is open. The original scope text follows,
+unedited, because the decision to supersede it is recorded rather than hidden.
+
 **Season 3's own scope is the fractal only** - membership, manifesto, activation, and the public
 points display. Zaal, verbatim, on adding ZAOstock, FISHBOWLZ, ZABAL Gamez or ZAO OS as projects
 under this ZIP: "No season 3 is just the fractla season none of these sjould be addednother than
@@ -229,7 +240,11 @@ display it via the existing `orclient`/`gui` stack) rather than a new offchain-o
 
 ### 9. Timeline
 
-Season 3 starts **1 November 2026** - the first activation lands that day (brainstorm #32). If
+Season 3 starts **1 December 2026** - the first activation lands that day. **Moved from 1 November
+on 2026-09-26** (`decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 4), because Season 3's
+scope changed the same day: Zaal, verbatim, "its really ZIP one tbh so this is a whole new world and
+season 3 will but an update of everythign we will be going out of beta and into full production
+release essentially". The 1 November date was already public, so the move needs announcing. If
 the activation wrapper contract is not reviewed by someone outside this estate in time, **the
 season moves.** Zaal has ruled this specific tradeoff already: The ZAO does not ship unreviewed
 governance code, and does not split activation into an off-chain interim step to hit the date
@@ -364,7 +379,7 @@ invented answers: the brainstorm log either defers each by name or leaves it una
 1. **The manifesto text does not exist yet.** Zaal chose the method - he rambles, the lane
    assembles strictly from his words, he reads it aloud and edits (brainstorm #35) - and brainstorm
    #6 itself says "Needs writing.", so this is a named gap, not silence. The capture session has
-   not happened. This gates the 1 November launch outright (handoffs/status/zaofractal.md,
+   not happened. This gates the 1 December launch outright (handoffs/status/zaofractal.md,
    NEEDS-ZAAL #4).
 2. **Custom module budget and reviewer.** The activation wrapper needs a named external Solidity
    reviewer, and none has been assigned as of this draft (handoffs/season3.md; season3-hats-
