@@ -11,7 +11,7 @@ last-updated: 2026-10-08
 
 ## Abstract
 
-A ZIP is a ZAO Improvement Proposal. It is how The ZAO writes down a decision so anyone can read it, question it and change it in the open. This ZIP explains the system in one place: what a ZIP is, how one gets proposed, numbered, discussed and accepted, and where ZIPs sit next to the Fractal and Respect. It adds no new rules. Everything here is already written in PROCESS.md, ZIP-1 or this repo's README. Where those sources disagree or leave a gap, this ZIP says so and leaves the question open for Zaal.
+A ZIP is a ZAO Improvement Proposal. It is how The ZAO writes down a decision so anyone can read it, question it and change it in the open. This ZIP explains the system in one place: what a ZIP is, how one gets proposed, numbered, discussed and accepted, and where ZIPs sit next to the Fractal and Respect. It adds no new rules. Everything here is already written in PROCESS.md, ZIP-1, this repo's README or a recorded ruling by Zaal. Where those sources disagree or leave a gap, this ZIP says so and leaves the question open for Zaal.
 
 ## Motivation
 
@@ -79,6 +79,8 @@ How a ZIP is ratified depends on what kind it is (PROCESS.md, "Ratification Proc
 
 Once ratified, the PR merges and the status changes to Accepted (PROCESS.md, "Governance Chain").
 
+**Ruled 2026-10-08: holders approve, mechanism pending review.** A merge alone does not accept a ZIP. ZAO holders approve ZIPs. Zaal, verbatim: "we honestly need to build a proper system for the ZAO holders to approve it can u reivew all repos and see what has been built like that we have used snapshot in the past" (vault `decisions/grill-2026-10-08-grill-morning.md`, item 5). Which system holders use to approve is not decided. It waits on a review of every repo for approval or voting systems already built. Until that lands, the paths above are what PROCESS.md says, not a settled mechanism.
+
 ### 8. How a ZIP is changed
 
 An Accepted ZIP is never quietly rewritten. To change it, write a new ZIP that names the old one, for example "Amend ZIP-1", and take it through the full process. When the new one is accepted, the old one gets `superseded-by` in its preamble. To retire a ZIP, mark it Withdrawn and keep it in the repo (PROCESS.md, "Amendment and Deprecation"; CLAUDE.md, "ZIPs as Governance Artifacts").
@@ -111,11 +113,11 @@ Every acceptance path except the onchain one runs through one maintainer. Zaal a
 
 ### Process risks
 
-The written sources disagree on what a merge means. CLAUDE.md says "Code changes on main = the ZIP is accepted" and "The merge to main represents ratification or status change." PROCESS.md says a ZIP is ratified by Fractal or ORDAO first, and the merge comes after. ZIP-1 already names this ("Ratification by merge") and leaves it open. In practice, Drafts have been merged to main (ZIP-1, the Season 3 ZIP), so today a merge does not mean accepted. Until Zaal rules, read the `status:` field, not the merge.
+The written sources disagree on what a merge means. CLAUDE.md says "Code changes on main = the ZIP is accepted" and "The merge to main represents ratification or status change." PROCESS.md says a ZIP is ratified by Fractal or ORDAO first, and the merge comes after. ZIP-1 already names this ("Ratification by merge") and leaves it open. In practice, Drafts have been merged to main (ZIP-1, the Season 3 ZIP), so a merge has never meant accepted. Zaal settled the principle on 2026-10-08: a merge alone does not accept a ZIP, ZAO holders approve it, and the mechanism is pending review (section 7). CLAUDE.md's merge wording now conflicts with that ruling. Until the mechanism is chosen, read the `status:` field, not the merge.
 
 ## Open Questions for Zaal
 
-1. **What does a merge mean?** Is a ZIP accepted when it merges, when the Fractal or ORDAO ratifies it, or only when its status says Accepted? (See Process risks.)
+1. **What does a merge mean?** ANSWERED 2026-10-08: a merge alone does not accept a ZIP; ZAO holders approve. Still open: which mechanism holders approve through, pending the review of existing voting systems (section 7).
 2. **Who can merge, and who is the "ZAO Governance Team"?** PROCESS.md names this team for review and Fractal facilitation, but no file lists its members.
 3. **Where does discussion live?** ZIP-1 points `discusses` at issue #1 in this repo. As of 2026-10-08 this repo has no issues (`gh issue list --state all` returns none). Is a ZIP's discussion the PR, a GitHub issue, a Discord thread or the Fractal?
 4. **What number does Season 3 get?** It moved to `zip-0000` in this PR. Is it ZIP-3, or does it wait until the project ZIPs are numbered?
