@@ -1,5 +1,5 @@
 ---
-zip: 2
+zip: TBD
 title: Season 3 - The Fractal Season
 author: Zaal
 status: Draft
@@ -7,7 +7,7 @@ created: 2026-09-15
 last-updated: 2026-09-26
 ---
 
-# ZIP-2: Season 3 - The Fractal Season
+# ZIP-TBD: Season 3 - The Fractal Season
 
 ## Abstract
 
