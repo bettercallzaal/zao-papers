@@ -74,7 +74,7 @@ How a ZIP is ratified depends on what kind it is (PROCESS.md, "Ratification Proc
 
 - **Small or process ZIPs** - community consensus. If nobody objects after one week of review, no formal vote is needed.
 - **Governance or Fractal ZIPs** - ratified through the Fractal, or voted on through ORDAO/OREC onchain.
-- **Protocol or onchain ZIPs** - voted through ORDAO. They must pass OREC's conditions: YES weight more than twice NO weight, and at least 1,000 Respect voting YES.
+- **Protocol or onchain ZIPs** - voted through ORDAO. They must pass OREC's conditions: YES weight more than twice NO weight (PROCESS.md), and at least 1,000 Respect voting YES (ZIP-1, section 2.4, citing Doc 981). `[to confirm: the repo's CLAUDE.md calls the same 1,000 Respect the OREC proposal threshold, not a minimum YES weight]`
 - **Framework ZIPs** - Fractal discussion plus community consensus, and may need Zaal's explicit approval.
 
 Once ratified, the PR merges and the status changes to Accepted (PROCESS.md, "Governance Chain").
@@ -140,5 +140,6 @@ This ZIP is released under CC-BY-4.0.
 | `zips/zip-template.md` | Sections, `0000` naming |
 | ZIP-1 | Fractal, Respect, OREC parameters, signer risk, "Ratification by merge" gap |
 | Season 3 ZIP (`zips/zip-0000-season-3.md`) | "ZAO Fractal is the governance of The ZAO" (brainstorm #21) |
-| `zao-icm` `boxes/thezao.llm.txt` | Governance summary: Respect, weekly game, OREC windows |
+| `zao-icm` `boxes/thezao.llm.txt` | Governance summary: Respect, weekly game, OREC 72 hour vote and veto windows (line 13) |
 | vault `decisions/grill-2026-10-08-grill-morning.md` item 3 | Zaal's ruling to rewrite ZIP-2 |
+| vault `decisions/grill-2026-10-08-grill-morning.md` item 5 | Zaal's ruling: a merge alone does not accept a ZIP; holders approve, mechanism pending review |
