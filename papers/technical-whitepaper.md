@@ -9,6 +9,7 @@ source-docs:
   - "ZAOOS research governance/2657 - Respect as the binding token (measured 2026-10-10)"
   - "ZAOOS research doc 2562 - OREC and the Respect ledgers"
   - "ZAOOS research doc 2642 - voting systems inventory"
+  - "ZAOOS research governance/981 - Fractal and bot synthesis, section 6 (on-chain pull of 2026-07-05)"
   - "ZAOOS research doc 059 - Hats tree 226 (last validated 2026-08-21)"
   - "ZIP-1 (zips/zip-0001-the-zao-framework.md) and the Season 3 ZIP (zips/zip-0002-season-3.md)"
   - "bettercallzaal/zingfisher main at 532e850 (packages/config/src/zao.ts, packages/lib/src/zao/)"
@@ -23,7 +24,7 @@ source-docs:
 ## Abstract
 
 The ZAO runs on one fact per member: how much Respect they hold. Respect is earned in a weekly peer-ranking
-game and minted on Optimism. It is not sold, and the OG contract is soulbound; whether ZOR can be
+game and minted on Optimism. The OG contract is soulbound; whether ZOR can be
 transferred is not established in the sources for this draft. Four systems read that one number: the
 on-chain executor (OREC), the Snapshot space, the ZAO OS app, and the zingfisher learning and proposal
 platform. Hats Protocol tree 226 names who holds which role and confers no vote weight. This paper lists the
@@ -64,8 +65,8 @@ PR #2. The fix is pinned by a test on one wallet whose balances were read on 202
 ZOR equals 3,952.
 
 Holder counts from The ZAO's ICM box dated 2026-07-05, as carried in doc 2656: 156 unique holders, 122
-holding OG, 55 holding ZOR, 21 holding both. These figures are three months old. Total OG supply is not
-established in the sources opened for this draft. `[to confirm: holder counts and OG supply as of October
+holding OG, 55 holding ZOR, 21 holding both. These figures are three months old. OG supply was 38,484 in the
+same 2026-07-05 pull (doc 981 section 6). `[to confirm: holder counts and OG supply as of October
 2026]`
 
 ### How Respect is created
@@ -150,11 +151,11 @@ The Season 3 ZIP specifies a Manifesto Hat as the membership credential. It is n
 | Approval of a ZIP | Snapshot space `zaal.eth` | Holder vote, off chain (ruled 2026-10-10, item 79) |
 | Anything on chain | OREC | Executes after 72 hours of voting and 72 hours of veto |
 
-OREC's own proposal threshold and the number of wallets that have submitted OREC proposals are not
-established in the sources opened for this draft. This repository's `CLAUDE.md` lists a threshold of 1,000
-Respect and two submitting wallets, citing doc 981 of 2026-07-05. Neither was re-checked here, and the
-1,000 in section 4 is a different number: the platform's publish bar. `[to confirm: OREC proposal threshold
-and submitter count, from the contract]`
+OREC's proposal threshold is 1,000 Respect, and 130 OREC proposals had been made from 4 wallets, 94
+percent of them from one relayer. Both figures are from ZAOOS doc 981 section 6, which reports an on-chain
+pull of 2026-07-05 recorded in doc 975. Doc 975 was not opened and neither figure was re-read from the
+chain for this draft. The 1,000 here is OREC's threshold; the 1,000 in section 4 is the platform's publish
+bar, a separate rule. `[to confirm: proposal and wallet counts as of October 2026]`
 
 ## 7. Known gaps
 
@@ -202,8 +203,9 @@ file on 2026-10-10.
 - ZAOOS research governance/2656 and governance/2657, both merged 2026-10-10. Every address, file path and
   measurement in this paper is taken from one of the two or from the files named below.
 - ZAOOS research docs 2562, 2642 and 059, as cited in 2656 and 2657. Docs 2562 and 2642 were not re-read
-  for this draft; doc 059 was opened only for its validation date. Doc 981 is named in this repository's
-  `CLAUDE.md` and was not opened.
+  for this draft; doc 059 was opened only for its validation date.
+- ZAOOS research governance/981 (last validated 2026-07-06), section 6, opened 2026-10-11: OG supply, the
+  OREC proposal threshold, and the proposal and wallet counts. It relays doc 975, which was not opened.
 - zingfisher main at 532e850: `packages/config/src/zao.ts`, `packages/lib/src/zao/zaoTokenGates.ts`,
   `packages/lib/src/zao/respectGate.ts`, `scripts/seedZaoTokenGates.ts`. Read 2026-10-11.
 - Rulings: vault decision files of 2026-09-22 (morning and afternoon) and 2026-09-26, and items 78, 79 and
