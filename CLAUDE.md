@@ -50,7 +50,7 @@ Use these facts from the latest on-chain audit (Doc 981, 2026-07-05) rather than
 | OREC proposal threshold | 1,000 Respect (~2.6% of OG supply) | VERIFIED |
 | Active Fractal participants | 6-30 per session (core ~6-10 builders) | VERIFIED |
 | Respect scoring curve | 110, 68, 42, 26, 16, 10 (per rank 1-6 in 6-person group) | VERIFIED |
-| OREC submissions | Only 2 wallets historically (zaal.eth, civilmonkey.eth) | VERIFIED |
+| OREC proposals | 130 ever, from only 4 wallets; one relayer submitted 122 of them (94%). 2026-07-05 pull. Read from ZAOOS doc 975 lines 30-31 and doc 981 line 92 | VERIFIED |
 
 If drafting a ZIP and these numbers have aged, re-verify against the latest on-chain query or research doc before publishing.
 
