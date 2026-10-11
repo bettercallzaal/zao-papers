@@ -9,7 +9,7 @@ source-docs:
   - "ZAOOS research governance/2657 - Respect as the binding token (measured 2026-10-10)"
   - "ZAOOS research doc 2562 - OREC and the Respect ledgers"
   - "ZAOOS research doc 2642 - voting systems inventory"
-  - "ZAOOS research doc 059 - Hats tree 226"
+  - "ZAOOS research doc 059 - Hats tree 226 (last validated 2026-08-21)"
   - "ZIP-1 (zips/zip-0001-the-zao-framework.md) and the Season 3 ZIP (zips/zip-0002-season-3.md)"
   - "bettercallzaal/zingfisher main at 532e850 (packages/config/src/zao.ts, packages/lib/src/zao/)"
 ---
@@ -23,7 +23,8 @@ source-docs:
 ## Abstract
 
 The ZAO runs on one fact per member: how much Respect they hold. Respect is earned in a weekly peer-ranking
-game, minted on Optimism, and cannot be bought or transferred. Four systems read that one number: the
+game and minted on Optimism. It is not sold, and the OG contract is soulbound; whether ZOR can be
+transferred is not established in the sources for this draft. Four systems read that one number: the
 on-chain executor (OREC), the Snapshot space, the ZAO OS app, and the zingfisher learning and proposal
 platform. Hats Protocol tree 226 names who holds which role and confers no vote weight. This paper lists the
 contracts, the exact read each system performs, the gates that follow from it, the parameters, and the known
@@ -62,15 +63,16 @@ A reader that skips the decimals step is wrong by a factor of 10^18. zingfisher 
 PR #2. The fix is pinned by a test on one wallet whose balances were read on 2026-10-10: 3,094 OG plus 858
 ZOR equals 3,952.
 
-Holder counts as of the 2026-07-05 audit (doc 981): 156 unique holders, 122 holding OG, 55 holding ZOR, 21
-holding both. OG supply 38,484. These figures are three months old. `[to confirm: holder counts as of
-October 2026]`
+Holder counts from The ZAO's ICM box dated 2026-07-05, as carried in doc 2656: 156 unique holders, 122
+holding OG, 55 holding ZOR, 21 holding both. These figures are three months old. Total OG supply is not
+established in the sources opened for this draft. `[to confirm: holder counts and OG supply as of October
+2026]`
 
 ### How Respect is created
 
 The weekly Fractal is the only source of governance Respect (ruled 2026-09-22, item 26).
 
-1. Members meet in breakout groups of up to six and rank each other's contributions by consensus.
+1. A breakout group of six ranks its members' contributions by consensus.
 2. The bot records the ranking (`fractal_sessions`, `fractal_scores`).
 3. A person submits the result to OREC through the ORDAO front end at zao.frapps.xyz.
 4. After the 72 hour vote and the 72 hour veto, OREC mints ZOR on the ladder 110, 68, 42, 26, 16, 10 for
@@ -83,7 +85,7 @@ No Respect is burned and none decays. The 2 percent weekly decay in earlier draf
 
 | Reader | Exact read | Used for | Agrees with the ruling |
 |---|---|---|---|
-| OREC | `respectContract()`, which today points at OG only | Vote weight on on-chain proposals | No. See section 7 |
+| OREC | `respectContract()`, which as of 2026-10-10 points at OG only | Vote weight on on-chain proposals | No. See section 7 |
 | Snapshot `zaal.eth` | `erc20-balance-of` on OG plus `erc1155-balance-of` on ZOR | Holder votes on ZIPs | Yes |
 | ZAO OS | Multicall of OG and ZOR, `formatEther` on OG | In-app proposal weight; refuses a vote when the read fails | Yes |
 | zingfisher | `respectGate.ts`: OG and ZOR, whole units | Display on the member page, advisory vote weight | Yes, since PR #2 |
@@ -104,7 +106,7 @@ in one place (`zaoTokenGates` in `packages/config/src/zao.ts`) and are evaluated
 | `zao-hat-configurator` | Wears the Configurator hat on tree 226 | ZAO Configurator | A label. No platform powers |
 | `zao-hat-governance-council-member` | Wears the Governance Council Members hat | ZAO Governance Council Member | A label. No platform powers |
 
-The gates are evaluated live by the membership API today. They become `TokenGate` and `Role` rows once a
+The gates are evaluated live by the membership API at zingfisher 532e850. They become `TokenGate` and `Role` rows once a
 database exists (`scripts/seedZaoTokenGates.ts`, idempotent, with a dry-run flag).
 
 The $ZABAL token confers nothing in any gate (ruled 2026-09-22, item 6).
@@ -130,7 +132,8 @@ the 1,000 is an open question in the spec.
 A hat is a role. Respect is standing. The two are kept apart on purpose.
 
 - Tree 226 has a top hat, a Configurator hat (2 of 5 worn), a Governance Council Members hat (3 of 5 worn),
-  and 17 project hats (doc 059). Counts are from doc 059. `[to confirm: wearer counts as of October 2026]`
+  and 17 project hats. These counts are from doc 059, last validated 2026-08-21; the day the wearers
+  were counted is not established. `[to confirm: wearer counts as of October 2026]`
 - Eligibility on the top-level hats is manual.
 - Hat ids are computed as 16-bit levels from bit 224. The Configurator hat is
   `0x000000e2 0001 0000...` and Governance Council Members is `0x000000e2 0001 0002...`.
@@ -143,15 +146,19 @@ The Season 3 ZIP specifies a Manifesto Hat as the membership credential. It is n
 
 | Kind of decision | Route | Binding |
 |---|---|---|
-| Discussion, drafts, sense of the room | zingfisher proposal page | Advisory |
+| Discussion, drafts, sense of the room | zingfisher proposal page (specified, not built) | Advisory |
 | Approval of a ZIP | Snapshot space `zaal.eth` | Holder vote, off chain (ruled 2026-10-10, item 79) |
 | Anything on chain | OREC | Executes after 72 hours of voting and 72 hours of veto |
 
-OREC's proposal threshold is 1,000 Respect. Historically two wallets have submitted OREC proposals.
+OREC's own proposal threshold and the number of wallets that have submitted OREC proposals are not
+established in the sources opened for this draft. This repository's `CLAUDE.md` lists a threshold of 1,000
+Respect and two submitting wallets, citing doc 981 of 2026-07-05. Neither was re-checked here, and the
+1,000 in section 4 is a different number: the platform's publish bar. `[to confirm: OREC proposal threshold
+and submitter count, from the contract]`
 
 ## 7. Known gaps
 
-Each of these is measured, not predicted.
+Each of these is taken from the sources below, with its date where the source gives one.
 
 1. **OREC counts OG only.** OG has had no new mints since 2025-12-20, so members who joined after that date
    hold ZOR and have no weight in OREC. 41 wallets hold ZOR and no OG, 7,476 ZOR between them (onboarding
@@ -194,10 +201,12 @@ file on 2026-10-10.
 
 - ZAOOS research governance/2656 and governance/2657, both merged 2026-10-10. Every address, file path and
   measurement in this paper is taken from one of the two or from the files named below.
-- ZAOOS research docs 2562, 2642, 059 and 981, as cited in 2656 and 2657. Not re-read for this draft.
+- ZAOOS research docs 2562, 2642 and 059, as cited in 2656 and 2657. Docs 2562 and 2642 were not re-read
+  for this draft; doc 059 was opened only for its validation date. Doc 981 is named in this repository's
+  `CLAUDE.md` and was not opened.
 - zingfisher main at 532e850: `packages/config/src/zao.ts`, `packages/lib/src/zao/zaoTokenGates.ts`,
   `packages/lib/src/zao/respectGate.ts`, `scripts/seedZaoTokenGates.ts`. Read 2026-10-11.
-- Rulings: vault decision files of 2026-09-22 (morning and afternoon), 2026-09-26 and 2026-10-09 (items
-  78, 79 and 85).
+- Rulings: vault decision files of 2026-09-22 (morning and afternoon) and 2026-09-26, and items 78, 79 and
+  85, each stamped 2026-10-10 in the decision file that opened on 2026-10-09.
 - Not searched for this draft: Google Drive and Notion. An earlier technical whitepaper may exist there.
   None was found in zao-papers, zao-website, ZAOfractal or the ZAOOS research index on 2026-10-10.
