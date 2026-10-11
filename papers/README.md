@@ -4,6 +4,7 @@ This directory contains canonical papers, research, and documentation about Spar
 
 ## Papers
 
+- **[technical-whitepaper.md](technical-whitepaper.md)** - The ZAO Technical Whitepaper: one Respect ledger, four readers. Contracts, the exact read each system performs, access gates, parameters and known gaps, measured October 2026. Status: Draft.
 - **[zabal-games.md](zabal-games.md)** - ZABAL Gamez: The ZAO's 3-Month Builder Incubator. Season 1: 28 June workshops, WaveWarZ Finals mechanic, 9 intake-ready builders. Status: Draft.
 - **[coc-concertz.md](coc-concertz.md)** - COC Concertz: The ZAO's Virtual Concert Series and Archive Protocol. 7 shows, Mar 2025-Jul 2026, Arweave fan archive with UDL licenses, WaveWarZ live integration. Status: Draft.
 - **[wavewarz.md](wavewarz.md)** - WaveWarZ: The ZAO's On-Chain Music Battle Platform. 1,108+ battles, 524.15 SOL volume, 98.5% ecosystem payout rate, verified on-chain. Status: Draft.
