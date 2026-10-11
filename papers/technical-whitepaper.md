@@ -155,7 +155,8 @@ OREC's proposal threshold is 1,000 Respect, and 130 OREC proposals had been made
 percent of them from one relayer. Both figures are from ZAOOS doc 981 section 6, which reports an on-chain
 pull of 2026-07-05 recorded in doc 975. Doc 975 was not opened and neither figure was re-read from the
 chain for this draft. The 1,000 here is OREC's threshold; the 1,000 in section 4 is the platform's publish
-bar, a separate rule. `[to confirm: proposal and wallet counts as of October 2026]`
+bar, a separate rule. `[to confirm: the threshold, and the proposal and wallet counts, as of October
+2026]`
 
 ## 7. Known gaps
 
@@ -194,9 +195,20 @@ window, and achievements recorded through Hats.
 
 ## Licences and credit
 
-zingfisher is a fork of CharmVerse by way of the KFMEDIA fork, under AGPL-3.0. ORDAO and OREC are by
-sim31 and contributors, GPL-3.0. Hats Protocol is AGPL-3.0. The licence of each was read from its LICENSE
-file on 2026-10-10.
+| Work | Who it is from | Where | Licence |
+|---|---|---|---|
+| The Respect game (fractal democracy, small-group consensus ranking) | Dan Larimer and the Fractally project; *More Equal Animals*, 2021 | Named in ZAOOS doc 981, section 1. No link checked for this draft | Not established |
+| ORDAO and OREC | sim31 and contributors | [sim31/ordao](https://github.com/sim31/ordao) | GPL-3.0 |
+| Hats Protocol | Hats Protocol contributors | [Hats-Protocol/hats-protocol](https://github.com/Hats-Protocol/hats-protocol) | AGPL-3.0 |
+| Snapshot (the space, and the balance strategies named in section 3) | Snapshot Labs | [snapshot-labs/snapshot-strategies](https://github.com/snapshot-labs/snapshot-strategies) | MIT |
+| CharmVerse | CharmVerse | [charmverse/app.charmverse.io](https://github.com/charmverse/app.charmverse.io) | Dual: AGPL-3.0 or commercial. The CharmVerse name is a trademark and is not used as branding |
+| KFMEDIA Learning Center, the fork zingfisher was forked from | Kingfishers Media | [KingfishersMediaLLC/kfmedia-learning-center](https://github.com/KingfishersMediaLLC/kfmedia-learning-center) | AGPL-3.0, inherited |
+| zingfisher | The ZAO | [bettercallzaal/zingfisher](https://github.com/bettercallzaal/zingfisher) | AGPL-3.0; changes listed in its `CHANGES.md` |
+| Fractal bot v2 | The ZAO | [bettercallzaal/zao-fractal-bot](https://github.com/bettercallzaal/zao-fractal-bot) | MIT |
+
+Licences for ORDAO, Hats Protocol, Snapshot strategies and the bot are as GitHub reported them on
+2026-10-11. The CharmVerse and zingfisher terms were read from the LICENSE file in zingfisher on 2026-10-10.
+Eden Fractal and Optimism Fractal ran the same game before and alongside The ZAO (doc 981, section 1).
 
 ## Sources
 
