@@ -64,10 +64,11 @@ A reader that skips the decimals step is wrong by a factor of 10^18. zingfisher 
 PR #2. The fix is pinned by a test on one wallet whose balances were read on 2026-10-10: 3,094 OG plus 858
 ZOR equals 3,952.
 
-Holder counts from The ZAO's ICM box dated 2026-07-05, as carried in doc 2656: 156 unique holders, 122
-holding OG, 55 holding ZOR, 21 holding both. These figures are three months old. OG supply was 38,484 in the
-same 2026-07-05 pull (doc 981 section 6). `[to confirm: holder counts and OG supply as of October
-2026]`
+Holder counts as of 2026-10-12: 165 unique holders, 122 holding OG, 64 holding ZOR, 21 holding both. Source:
+The ZAO's ICM box, updated by zao-icm PR #8 (merged 2026-10-13), and a re-run of the ZAOOS doc 1200 verifier
+at block 158127251, which returned the same counts. The July 2026 figures (156 holders, 55 holding ZOR) are
+superseded. OG supply was 38,484 in the 2026-07-05 pull (doc 981 section 6); it has not been re-measured
+since. `[to confirm: OG supply as of October 2026]`
 
 ### How Respect is created
 
@@ -79,8 +80,10 @@ The weekly Fractal is the only source of governance Respect (ruled 2026-09-22, i
 4. After the 72 hour vote and the 72 hour veto, OREC mints ZOR on the ladder 110, 68, 42, 26, 16, 10 for
    ranks one to six.
 
-No Respect is burned and none decays. The 2 percent weekly decay in earlier drafts was ruled out on
-2026-09-26.
+Respect does not decay. The 2 percent weekly decay in earlier drafts was ruled out on 2026-09-26. Burns are
+not absent from the record: the fractal ledger (vault `notes/fractal-ledger-2026-10-12.md`, as of 2026-10-12)
+records burns dated 2025-10-17 (tx `0x1cf9c2a6`, for example meetings 69 and 71). This paper does not
+reconstruct burn totals.
 
 ## 3. Four readers of one ledger
 
@@ -163,8 +166,10 @@ bar, a separate rule. `[to confirm: the threshold, and the proposal and wallet c
 Each of these is taken from the sources below, with its date where the source gives one.
 
 1. **OREC counts OG only.** OG has had no new mints since 2025-12-20, so members who joined after that date
-   hold ZOR and have no weight in OREC. 41 wallets hold ZOR and no OG, 7,476 ZOR between them (onboarding
-   spec, question 10). The ruled fix is a wrapper contract answering OG plus ZOR, installed by one passed
+   hold ZOR and have no weight in OREC. 43 wallets hold ZOR and no OG as of 2026-10-12 (165 unique holders
+   minus 122 OG holders; ZOR-only wallets are 64 ZOR holders minus 21 holding both). The earlier figure of 41 was
+   from the onboarding spec, question 10, which gives no date; that spec's total of 7,476 ZOR is undated and
+   has not been re-measured. The ruled fix is a wrapper contract answering OG plus ZOR, installed by one passed
    proposal calling `setRespectContract`. The wrapper is not written. It needs an external Solidity
    reviewer before anything goes on chain. No reviewer is assigned.
 2. **One submitter.** The last 12 mints came from one address. The bot has no submit path, so a person

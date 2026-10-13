@@ -79,7 +79,7 @@ How a ZIP is ratified depends on what kind it is (PROCESS.md, "Ratification Proc
 
 Once ratified, the PR merges and the status changes to Accepted (PROCESS.md, "Governance Chain").
 
-**Ruled 2026-10-08: holders approve, mechanism pending review.** A merge alone does not accept a ZIP. ZAO holders approve ZIPs. Zaal, verbatim: "we honestly need to build a proper system for the ZAO holders to approve it can u reivew all repos and see what has been built like that we have used snapshot in the past" (vault `decisions/grill-2026-10-08-grill-morning.md`, item 5). Which system holders use to approve is not decided. It waits on a review of every repo for approval or voting systems already built. Until that lands, the paths above are what PROCESS.md says, not a settled mechanism.
+**Ruled 2026-10-08: holders approve, mechanism pending review.** A merge alone does not accept a ZIP. ZAO holders approve ZIPs. Zaal, verbatim: "we honestly need to build a proper system for the ZAO holders to approve it can u reivew all repos and see what has been built like that we have used snapshot in the past" (vault `decisions/grill-2026-10-08-grill-morning.md`, item 5). **Ruled 2026-10-10: the approval mechanism is Snapshot, space `zaal.eth`.** Holder approval of a ZIP runs as a vote in the existing Snapshot space `zaal.eth`, which already counts OG and ZOR. On-chain actions go to OREC. The ruling is vault `decisions/grill-2026-10-09-seat-morning.md`, item 79 (dated 2026-10-10). The review of other voting systems that item 79 names is a separate question; the paths above are what PROCESS.md says.
 
 ### 8. How a ZIP is changed
 
@@ -109,7 +109,7 @@ Nothing in PROCESS.md, ZIP-1 or the template changes.
 
 ### Governance risks
 
-Every acceptance path except the onchain one runs through one maintainer. Zaal assigns numbers and makes the final ratification calls (PROCESS.md, "Maintainers"). That is the same single point of failure ZIP-1 flags for OREC, where only two wallets have ever submitted (ZIP-1, section 2.4).
+Every acceptance path except the onchain one runs through one maintainer. Zaal assigns numbers and makes the final ratification calls (PROCESS.md, "Maintainers"). That is the same single point of failure ZIP-1 flags for OREC. CLAUDE.md (Verified Reference Data, OREC proposals row, 2026-07-05 pull) says "130 ever, from only 4 wallets"; ZIP-1 section 2.4 still says two wallets and is out of date on this point.
 
 ### Process risks
 
@@ -117,7 +117,7 @@ The written sources disagree on what a merge means. CLAUDE.md says "Code changes
 
 ## Open Questions for Zaal
 
-1. **What does a merge mean?** ANSWERED 2026-10-08: a merge alone does not accept a ZIP; ZAO holders approve. Still open: which mechanism holders approve through, pending the review of existing voting systems (section 7).
+1. **What does a merge mean?** ANSWERED 2026-10-08: a merge alone does not accept a ZIP; ZAO holders approve. The mechanism was ruled 2026-10-10 (section 7, item 79): Snapshot space `zaal.eth`.
 2. **Who can merge, and who is the "ZAO Governance Team"?** PROCESS.md names this team for review and Fractal facilitation, but no file lists its members.
 3. **Where does discussion live?** ZIP-1 points `discusses` at issue #1 in this repo. As of 2026-10-08 this repo has no issues (`gh issue list --state all` returns none). Is a ZIP's discussion the PR, a GitHub issue, a Discord thread or the Fractal?
 4. **What number does Season 3 get?** It moved to `zip-0000` in this PR. Is it ZIP-3, or does it wait until the project ZIPs are numbered?
@@ -142,4 +142,6 @@ This ZIP is released under CC-BY-4.0.
 | Season 3 ZIP (`zips/zip-0000-season-3.md`) | "ZAO Fractal is the governance of The ZAO" (brainstorm #21) |
 | `zao-icm` `boxes/thezao.llm.txt` | Governance summary: Respect, weekly game, OREC 72 hour vote and veto windows (line 13) |
 | vault `decisions/grill-2026-10-08-grill-morning.md` item 3 | Zaal's ruling to rewrite ZIP-2 |
-| vault `decisions/grill-2026-10-08-grill-morning.md` item 5 | Zaal's ruling: a merge alone does not accept a ZIP; holders approve, mechanism pending review |
+| vault `decisions/grill-2026-10-08-grill-morning.md` item 5 | Zaal's ruling: a merge alone does not accept a ZIP; holders approve |
+| vault `decisions/grill-2026-10-09-seat-morning.md` item 79 (2026-10-10) | Zaal's ruling: approval runs in Snapshot space `zaal.eth`; on-chain actions go to OREC |
+| `CLAUDE.md`, Verified Reference Data (OREC proposals row, 2026-07-05 pull) | 130 OREC proposals from 4 wallets |

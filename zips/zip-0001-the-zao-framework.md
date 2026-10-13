@@ -160,7 +160,7 @@ Purpose: Enable bookkeeping, budgeting, and allocation of treasury resources wit
 
 The ZAO maintains a collective treasury managed through:
 
-- **Artizen Fund:** Fund for Emerging Culture, structured as a legal entity (S6 status)
+- **Structure:** [to confirm: the legal entity that holds the treasury, as of 2026-10-13]
 - **Owner:** Zaal (legal representative)
 - **Purpose:** Revenue from ZAO projects, grants, and donations pool for reinvestment in the community
 
@@ -188,7 +188,7 @@ The ZAO operates a portfolio of branded products and initiatives. The community 
 - **What:** Talent engine and workshop/mentorship platform for musicians and builders
 - **Features:** 3-month build-a-thon (Jun/Jul/Aug 2026), mentorship from industry partners, onboarding for newcomers
 - **Status:** Announced May 2026, running through August 2026
-- **Partners:** Magnetiq (event/launch platform), [to confirm: other partners]
+- **Partners:** [to confirm: current partner list, as of 2026-10-13]
 
 #### 4.4 Sparkz
 
@@ -367,7 +367,7 @@ This ZIP synthesizes information from multiple research documents and on-chain q
 - Sparkz product description and status
 - ZAO-PALOOZA date and location
 - ZOL exact repository location
-- ZABAL Games mentorship partner list (beyond Magnetiq)
+- ZABAL Games mentorship partner list (current, as of 2026-10-13)
 - Current ZAO-STOCK spinout status (as of July 2026)
 
 ---
