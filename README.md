@@ -39,6 +39,8 @@ See [members/README.md](members/README.md) for the growing series.
 | # | Title | Status | Description |
 |---|-------|--------|-------------|
 | **1** | [The ZAO Framework](zips/zip-0001-the-zao-framework.md) | Draft | Foundational governance architecture: Fractal, Respect, Brands, Agents |
+| **2** | [The ZIP System](zips/zip-0002-the-zip-system.md) | Draft | What a ZIP is and how one is proposed, numbered, discussed and accepted |
+| TBD | [Season 3 - The Fractal Season](zips/zip-0000-season-3.md) | Draft | Membership layers, joining and activation for the Fractal |
 
 ## Papers and Research
 
