@@ -20,7 +20,7 @@ As the education pillar, ohnahji shapes how new people learn what The ZAO is and
 
 ## ZABAL Games Mentor
 
-ohnahji is one of eight locked mentors in ZABAL Games. She holds a Hats Protocol onchain role - "ZAO Mentor S1" - alongside candytoybox, Iman, Thy Revolution, Tom Fellenz, eduard, freezetheverse, and Adam SongJam. In August 2026, ohnahji will embed with one of the finalists for a synchronized 24-hour build session, bringing her education and onboarding perspective to whatever that builder ships.
+ohnahji is one of eight locked mentors in ZABAL Games. She holds a Hats Protocol onchain role - "ZAO Mentor S1" - alongside candytoybox, Iman, Thy Revolution, Tom Fellenz, eduard, freezetheverse, and Adam. In August 2026, ohnahji will embed with one of the finalists for a synchronized 24-hour build session, bringing her education and onboarding perspective to whatever that builder ships.
 
 ## Open Questions
 

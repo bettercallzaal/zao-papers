@@ -28,7 +28,7 @@ This is what "deff design" means in The ZAO lexicon - thorough, grounded, not de
 
 ## ZABAL Games Mentor
 
-Samantha is one of eight locked mentors in ZABAL Games. She holds a Hats Protocol onchain role - "ZAO Mentor S1" - alongside Iman, Thy Revolution, Tom Fellenz, ohnahji, eduard, freezetheverse, and Adam SongJam. In August 2026, she will embed with one of the finalists for a synchronized 24-hour build session, bringing her design + brand perspective to whatever that builder ships.
+Samantha is one of eight locked mentors in ZABAL Games. She holds a Hats Protocol onchain role - "ZAO Mentor S1" - alongside Iman, Thy Revolution, Tom Fellenz, ohnahji, eduard, freezetheverse, and Adam. In August 2026, she will embed with one of the finalists for a synchronized 24-hour build session, bringing her design + brand perspective to whatever that builder ships.
 
 ## Open Questions
 
