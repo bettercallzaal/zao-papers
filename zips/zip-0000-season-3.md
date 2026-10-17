@@ -4,14 +4,14 @@ title: Season 3 - The Fractal Season
 author: Zaal
 status: Draft
 created: 2026-09-15
-last-updated: 2026-09-26
+last-updated: 2026-10-17
 ---
 
 # ZIP-TBD: Season 3 - The Fractal Season
 
 ## Abstract
 
-Season 3 starts 1 December 2026 (moved from 1 November on 2026-09-26) and redefines who is "in The ZAO." It replaces the five
+Season 3 starts 1 December 2026 (moved from 1 November on 2026-09-26, reconfirmed 2026-10-10, `decisions/grill-2026-10-09-seat-morning.md`, item 85) and redefines who is "in The ZAO." It replaces the five
 conflicting code-level meanings of "member" (brainstorm, Measured context 2026-09-11) with three
 layers - provisional, full, and this month's active voting pool - joined by a soulbound,
 gasless, one-signature manifesto mint, kept by monthly self-service activation with no burn, and
@@ -130,11 +130,13 @@ swappable to any new contract implementing `IRespect` or ERC-20 `balanceOf`, wit
 OREC, via one governance-passed `setRespectContract` call (same source). Season 3's activation
 layer is therefore **a small custom wrapper contract implementing `IRespect`, installed into OREC
 through one governance proposal** - it never touches the real Respect ledger, it only answers "is
-this address's activation current right now" when OREC reads it (Zaal's build-order list,
+this address's activation current right now" when OREC reads it, and, ruled 2026-10-10
+(`decisions/grill-2026-10-09-seat-morning.md`, item 78), it answers with the wallet's whole OG plus ZOR when activation is current and
+zero when it is not (Zaal's build-order list,
 handoffs/season3.md; season3-protocol-survey-2026-09-11.md, Layer 4 Part B/recommended stack).
 This is the "small custom wrapper OREC reads" item on Zaal's own post-launch build list and needs
 review by a Solidity reviewer who did not write it before it ships (handoffs/season3.md). What
-backs the wrapper's own activation record is not yet decided - see Open Item 5.
+backs the wrapper's own activation record is not yet decided - see Open Item 6.
 
 **Why this cannot be a Hats module, measured.** Hats has two ways to stop a hat counting and they
 are not equivalent. The eligibility path is per-member, and in `Hats.sol` `_processHatWearerStatus`
@@ -197,6 +199,13 @@ and session logs before reconciling against the chain (rulings 1 and 5). Whether
 ZIP as an amendment or in a new ZIP-1-scale document is open. The original scope text follows,
 unedited, because the decision to supersede it is recorded rather than hidden.
 
+**ZIP approval, ruled 2026-10-10 (`decisions/grill-2026-10-09-seat-morning.md`, item 79).** Holder approval of a ZIP runs in the
+existing Snapshot space `zaal.eth`, which already weighs OG plus ZOR. The zingfisher platform's
+proposal vote is advisory. Anything that must execute on chain goes through OREC afterwards. This
+answers ZIP-2's Open Question 1 for the mechanism and adopts ZAOOS
+`governance/2642-zao-holder-approval-systems-inventory`. Whether this ZIP itself goes to that vote
+is Zaal's call.
+
 **Season 3's own scope is the fractal only** - membership, manifesto, activation, and the public
 points display. Zaal, verbatim, on adding ZAOstock, FISHBOWLZ, ZABAL Gamez or ZAO OS as projects
 under this ZIP: "No season 3 is just the fractla season none of these sjould be addednother than
@@ -236,7 +245,9 @@ Intro Respect, hosting Respect and bonus Respect display at fractal.thezao.com (
 Sub-project 2). The recommended display mechanism is minting these offchain point categories as
 onchain ZOR (already the ORDAO ecosystem's own pattern: mint an award, index it via `ornode`,
 display it via the existing `orclient`/`gui` stack) rather than a new offchain-only ledger
-(season3-protocol-survey-2026-09-11.md, Layer 4 Part C).
+(season3-protocol-survey-2026-09-11.md, Layer 4 Part C). On the platform side, the member page in
+the CharmVerse fork (`bettercallzaal/zingfisher`, `/member/[zid]`) reads OG, ZOR and their sum live
+from chain; the fractal bot's own dashboard (`zao-fractal-bot/web/app`) is not deployed.
 
 ### 9. Timeline
 
@@ -244,7 +255,9 @@ Season 3 starts **1 December 2026** - the first activation lands that day. **Mov
 on 2026-09-26** (`decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 4), because Season 3's
 scope changed the same day: Zaal, verbatim, "its really ZIP one tbh so this is a whole new world and
 season 3 will but an update of everythign we will be going out of beta and into full production
-release essentially". The 1 November date was already public, so the move needs announcing. If
+release essentially". Reconfirmed on 2026-10-10 (`decisions/grill-2026-10-09-seat-morning.md`, item 85), Zaal verbatim: "tbh its fine
+we can even do jan 1st but theres lots going on then so dec 1st is best". The 1 November date was
+already public, so the move needs announcing. If
 the activation wrapper contract is not reviewed by someone outside this estate in time, **the
 season moves.** Zaal has ruled this specific tradeoff already: The ZAO does not ship unreviewed
 governance code, and does not split activation into an off-chain interim step to hit the date
@@ -324,6 +337,28 @@ Community) are delisted as project branches and converted to member-profile attr
 given month lose nothing but that month's vote weight - they remain full members with every
 point intact (brainstorm #1, #19).
 
+## What Season 3 changes against the fractal as run today (v2)
+
+The weekly game today is run by the v2 Discord bot (`bettercallzaal/zao-fractal-bot`, MIT,
+discord.js, viem, Supabase; ZAOOS `governance/1069-fractal-discord-bot-voting-mechanism` is the
+ground truth of its voting). Season 3 does not change the game. It changes who is in, what counts
+for the vote, and where results are seen. The left column is as recorded by the zao-core lane on
+2026-10-10.
+
+| Today (v2) | Season 3 (this ZIP) | Ruling |
+|---|---|---|
+| Membership is five code-level things plus Discord (Motivation) and, in the fork, a gate on any OG or ZOR above 0 | Provisional, full, active (section 1); the Manifesto Hat is the credential | brainstorm #1, #13, #17 |
+| Join is a Discord intro or a wallet that already holds Respect | One signature mints the manifesto; identity link makes it full | brainstorm #2, #4 |
+| Vote weight on OREC is OG only, frozen since 2025-12-20; the platform and Snapshot count OG + ZOR | One wrapper returns whole OG + ZOR for activated wallets; one `setRespectContract` proposal installs it | item 78 |
+| No activation; inactive members keep full weight forever | Rolling 90-day activation; inactive members keep every point and lose the vote until they act | 2026-09-26 midday ruling 2 |
+| A member leaves by never returning | Revocable by a passed OREC proposal only | brainstorm #8 |
+| Roles are 17 manual-eligibility hats on tree 226 and level-4 Manager hats | Achievements, titles and roles granted as hats after a human-checked phase; tree pruned as section 6 lists | brainstorm #10, #25 to #31 |
+| OG is frozen | OG resumes as the one-time achievements ledger through OREC custom transactions, after the record is repaired | 2026-09-26 afternoon rulings 1 and 5 |
+| One Respect ledger for everything | ZAO Fractal Respect (governance), ZAO Festivals Respect, WaveWarZ Respect later, each in its own org | 2026-09-26 afternoon ruling 2 |
+| Breakout results reach OREC through a human at zao.frapps.xyz; the v2 bot's `src/` has no submit path | Unchanged by this ZIP. Whether the bot submits is a question for Zaal (ZAOOS `governance/2657-respect-binding-token-design`, Next Actions) | Security, below |
+| Bot v2 persistence: migrations 0001 to 0007 in `supabase/migrations` [to confirm: which are applied, and the newest session row] | The record is repaired from Discord and session logs first, then reconciled against the chain, then minted | 2026-09-26 afternoon ruling 5 |
+| Results are seen in Discord and on an undeployed dashboard | The public points page (section 8) and the member page in the fork | brainstorm #33 |
+
 ## Security and Governance Considerations
 
 ### Technical Security
@@ -382,8 +417,11 @@ invented answers: the brainstorm log either defers each by name or leaves it una
    not happened. This gates the 1 December launch outright (handoffs/status/zaofractal.md,
    NEEDS-ZAAL #4).
 2. **Custom module budget and reviewer.** The activation wrapper needs a named external Solidity
-   reviewer, and none has been assigned as of this draft (handoffs/season3.md; season3-hats-
+   reviewer, and none had been assigned when this item was written (handoffs/season3.md; season3-hats-
    protocol-research-2026-09-11.md, Open Question 3).
+   Update 2026-10-17: Zaal named the reviewers on 2026-09-26
+   (`decisions/grill-2026-09-26-zao-papers-midday.md`, ruling 1). The wrapper's scope changed on
+   2026-10-10 (`decisions/grill-2026-10-09-seat-morning.md`, item 78), so the review must cover the summing rule as well as activation.
 3. **Automation gap in tree 226's top levels.** Every hat in the top four levels of the tree,
    except the Wave WarZ DAO branch, uses a non-contract sentinel address as its eligibility/toggle
    module, so nothing today can trigger automated revocation on those hats
@@ -396,7 +434,19 @@ invented answers: the brainstorm log either defers each by name or leaves it una
 4. **The "ZAO Fractals" branch name.** Deferred to Season 4 by Zaal's own words (brainstorm #29);
    this ZIP does not resolve the naming conflict with brainstorm #21 described under Process
    Risks above.
-5. **WHICH LEDGER IS VOTE WEIGHT. Added 2026-09-26, and it outranks everything else here.**
+5. **RESOLVED 2026-10-10 (`decisions/grill-2026-10-09-seat-morning.md`, item 78): vote weight is OG plus ZOR, summed in whole
+   Respect.** The `IRespect` wrapper in section 3 returns, for a wallet, its OG balance divided by
+   10^18 plus its ZOR balance (OG has 18 decimals; ZOR is an integer ERC-1155 balance), gated by the
+   rolling 90-day activation. One passed OREC proposal calling `setRespectContract` installs it. The
+   platform (ZAOOS `src/lib/respect/voteWeight.ts`, zingfisher PR #2) and the Snapshot space
+   `zaal.eth` already count OG plus ZOR, so after that proposal every surface counts the same
+   people. Zaal's 2026-09-26 ruling that OG resumes as the one-time achievements ledger
+   (`decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 1) is compatible: achievement OG
+   counts toward weight at one Respect per unit, exactly like game ZOR. Design note: ZAOOS
+   `governance/2657-respect-binding-token-design`. Nothing ships on chain before the external
+   Solidity review in Open Item 2. The question as it was raised on 2026-09-26 follows, unedited.
+
+   **WHICH LEDGER IS VOTE WEIGHT. Added 2026-09-26, and it outranks everything else here.**
    MEASURED on Optimism 2026-09-26: `OREC.respectContract()` returns `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`,
    the OG Respect ERC-20, whose newest transfer is 2025-12-20. The weekly fractal mints ZOR
    (64 holders, 373 transfers, newest mint 2026-09-24 at onchain `periodNumber` 114). So every
@@ -434,3 +484,9 @@ invented answers: the brainstorm log either defers each by name or leaves it una
   state and open NEEDS-ZAAL questions this ZIP inherits as Open Items.
 - `decisions/grill-2026-09-15-morning.md` - Zaal's ruling on what counts as "attending
   something" for auto-activation, closing brainstorm #20.
+- `decisions/grill-2026-10-09-seat-morning.md` - items 78 (vote weight is OG plus ZOR), 79 (ZIP approval runs in Snapshot) and 85
+  (1 December 2026 reconfirmed), all 2026-10-10.
+- ZAOOS `governance/2656-zao-core-system-map`, `governance/2657-respect-binding-token-design` and
+  `governance/2642-zao-holder-approval-systems-inventory`.
+- `bettercallzaal/zao-fractal-bot` README, "Subsystems and Architecture Status (Updated
+  2026-09-21)", and `docs/ideas/README.md`.
